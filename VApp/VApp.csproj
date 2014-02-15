@@ -100,9 +100,6 @@
     <Prefer32Bit>true</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <!-- A reference to the entire .Net Framework and Windows SDK are automatically included -->
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
@@ -125,14 +122,19 @@
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\RichTextColumns.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="UserControls\ProfileUserControl.xaml.cs">
+      <DependentUpon>ProfileUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VAWebsite\VACommunicator.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
+    <Compile Include="ViewModels\ProfileViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <AppxManifest Include="Package.appxmanifest">
       <SubType>Designer</SubType>
     </AppxManifest>
     <None Include="Common\ReadMe.txt" />
+    <None Include="packages.config" />
     <None Include="VApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
@@ -160,8 +162,36 @@
     <Content Include="Assets\pharmacy2.png" />
     <Content Include="Assets\prescription.png" />
     <Content Include="Assets\research_health.png" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-140.png" />
+    <Content Include="Assets\Logo.scale-180.png" />
+    <Content Include="Assets\Logo.scale-80.png" />
+    <Content Include="Assets\pane_account_mid.jpg" />
+    <Content Include="Assets\pane_appointments_mid.jpg" />
+    <Content Include="Assets\pane_calendar_mid.jpg" />
+    <Content Include="Assets\pane_caregivers_mid.jpg" />
+    <Content Include="Assets\pane_changepassword_mid.jpg" />
+    <Content Include="Assets\pane_disAndCond_mid.jpg" />
+    <Content Include="Assets\pane_facilities_mid.jpg" />
+    <Content Include="Assets\pane_healthHistory_mid.jpg" />
+    <Content Include="Assets\pane_healthyLivingCenters_mid.jpg" />
+    <Content Include="Assets\pane_health_data2.jpg" />
+    <Content Include="Assets\pane_ice_mid.jpg" />
+    <Content Include="Assets\pane_journals_mid.jpg" />
+    <Content Include="Assets\pane_labs_mid.jpg" />
+    <Content Include="Assets\pane_medicalLibrary_mid.jpg" />
+    <Content Include="Assets\pane_medicationlist_mid.jpg" />
+    <Content Include="Assets\pane_mentalHealth_mid.jpg" />
+    <Content Include="Assets\pane_mycoverage_mid.jpg" />
+    <Content Include="Assets\pane_profiles_mid.jpg" />
+    <Content Include="Assets\pane_refillhistory_mid.jpg" />
+    <Content Include="Assets\pane_reminders_mid.jpg" />
+    <Content Include="Assets\pane_rxrefill_mid.jpg" />
+    <Content Include="Assets\pane_vamedications_mid.jpg" />
+    <Content Include="Assets\pane_vitals_mid.jpg" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\LightGray.png" />
     <Content Include="Assets\MediumGray.png" />
@@ -190,6 +220,15 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Page Include="UserControls\ProfileUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="HtmlAgilityPack">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.6\lib\winrt45\HtmlAgilityPack.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '11.0' ">
     <VisualStudioVersion>11.0</VisualStudioVersion>
