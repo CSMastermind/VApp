@@ -6,12 +6,12 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="600"
+    d:DesignHeight="1000"
     d:DesignWidth="400">
     
     <UserControl.Resources>
         <Style x:Key="Heading1" TargetType="TextBlock">
-            <Setter Property="FontSize" Value="16" />
+            <Setter Property="FontSize" Value="18" />
             <Setter Property="Margin" Value="0,10,0,10" />
         </Style>
 
@@ -45,11 +45,35 @@
         
         <TextBlock Text="Relationship to the VA" Style="{StaticResource Heading1}" />
 
+        
+        <TextBlock Text="Primary Address" Style="{StaticResource Heading1}" />
 
+        
         <TextBlock Text="Contact Information" Style="{StaticResource Heading1}" />
 
         <TextBlock Text="Contact Method" Style="{StaticResource Label}" />
         <ComboBox x:Name="ContactMethodBox" ItemsSource="{Binding ContactMethods}" SelectedItem="{Binding ContactMethod, Mode=TwoWay}" />
+
+        <TextBlock Text="Email (E)" Style="{StaticResource Label}" />
+        <TextBox x:Name="EmailBox" Text="{Binding Email, Mode=TwoWay}" />
+
+        <TextBlock Text="Home Phone (H)" Style="{StaticResource Label}" />
+        <TextBox x:Name="HomePhoneBox" Text="{Binding HomePhone, Mode=TwoWay}" />
+
+        <TextBlock Text="Mobile Phone (M)" Style="{StaticResource Label}" />
+        <TextBox x:Name="MobilePhoneBox" Text="{Binding MobilePhone, Mode=TwoWay}" />
+
+        <TextBlock Text="Work Phone (W)" Style="{StaticResource Label}" />
+        <TextBox x:Name="WorkPhoneBox" Text="{Binding WorkPhone, Mode=TwoWay}" />
+
+        <TextBlock Text="Fax (F)" Style="{StaticResource Label}" />
+        <TextBox x:Name="FaxBox" Text="{Binding Fax, Mode=TwoWay}" />
+
+        <TextBlock Text="Pager (P)" Style="{StaticResource Label}" />
+        <TextBox x:Name="PagerBox" Text="{Binding Pager, Mode=TwoWay}" />
+        
+        <TextBlock Text="Account Information" Style="{StaticResource Heading1}" />
+
 
         <Button Content="Save" HorizontalAlignment="Right" Command="{Binding SaveCommand}" />
     </StackPanel>

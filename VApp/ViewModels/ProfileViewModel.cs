@@ -28,6 +28,18 @@ namespace VApp.ViewModels
 
         private string contactMethod;
 
+        private string email;
+
+        private string homePhone;
+
+        private string mobilePhone;
+
+        private string workPhone;
+
+        private string fax;
+
+        private string pager;
+
         private ObservableCollection<string> contactMethods;
 
         private DelegateCommand saveCommand;
@@ -157,6 +169,90 @@ namespace VApp.ViewModels
                 {
                     this.contactMethod = value;
                     this.NotifyPropertyChanged("ContactMethod");
+                }
+            }
+        }
+
+        public string Email
+        {
+            get { return this.email; }
+
+            set
+            {
+                if (value != null && !value.Equals(this.email))
+                {
+                    this.email = value;
+                    this.NotifyPropertyChanged("Email");
+                }
+            }
+        }
+
+        public string MobilePhone
+        {
+            get { return this.mobilePhone; }
+
+            set
+            {
+                if (value != null && !value.Equals(this.mobilePhone))
+                {
+                    this.mobilePhone = value;
+                    this.NotifyPropertyChanged("MobilePhone");
+                }
+            }
+        }
+
+        public string HomePhone
+        {
+            get { return this.homePhone; }
+
+            set
+            {
+                if (value != null && !value.Equals(this.homePhone))
+                {
+                    this.homePhone = value;
+                    this.NotifyPropertyChanged("HomePhone");
+                }
+            }
+        }
+
+        public string WorkPhone
+        {
+            get { return this.workPhone; }
+
+            set
+            {
+                if (value != null && !value.Equals(this.workPhone))
+                {
+                    this.workPhone = value;
+                    this.NotifyPropertyChanged("WorkPhone");
+                }
+            }
+        }
+
+        public string Fax
+        {
+            get { return this.fax; }
+
+            set
+            {
+                if (value != null && !value.Equals(this.fax))
+                {
+                    this.fax = value;
+                    this.NotifyPropertyChanged("Fax");
+                }
+            }
+        }
+
+        public string Pager
+        {
+            get { return this.pager; }
+
+            set
+            {
+                if (value != null && !value.Equals(this.pager))
+                {
+                    this.pager = value;
+                    this.NotifyPropertyChanged("Pager");
                 }
             }
         }
