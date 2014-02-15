@@ -139,8 +139,36 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\Logo.scale-100.png" />
+    <Content Include="Assets\Logo.scale-140.png" />
+    <Content Include="Assets\Logo.scale-180.png" />
+    <Content Include="Assets\Logo.scale-80.png" />
+    <Content Include="Assets\pane_account_mid.jpg" />
+    <Content Include="Assets\pane_appointments_mid.jpg" />
+    <Content Include="Assets\pane_calendar_mid.jpg" />
+    <Content Include="Assets\pane_caregivers_mid.jpg" />
+    <Content Include="Assets\pane_changepassword_mid.jpg" />
+    <Content Include="Assets\pane_disAndCond_mid.jpg" />
+    <Content Include="Assets\pane_facilities_mid.jpg" />
+    <Content Include="Assets\pane_healthHistory_mid.jpg" />
+    <Content Include="Assets\pane_healthyLivingCenters_mid.jpg" />
+    <Content Include="Assets\pane_health_data2.jpg" />
+    <Content Include="Assets\pane_ice_mid.jpg" />
+    <Content Include="Assets\pane_journals_mid.jpg" />
+    <Content Include="Assets\pane_labs_mid.jpg" />
+    <Content Include="Assets\pane_medicalLibrary_mid.jpg" />
+    <Content Include="Assets\pane_medicationlist_mid.jpg" />
+    <Content Include="Assets\pane_mentalHealth_mid.jpg" />
+    <Content Include="Assets\pane_mycoverage_mid.jpg" />
+    <Content Include="Assets\pane_profiles_mid.jpg" />
+    <Content Include="Assets\pane_refillhistory_mid.jpg" />
+    <Content Include="Assets\pane_reminders_mid.jpg" />
+    <Content Include="Assets\pane_rxrefill_mid.jpg" />
+    <Content Include="Assets\pane_vamedications_mid.jpg" />
+    <Content Include="Assets\pane_vitals_mid.jpg" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
+    <Content Include="Assets\SplashScreen.scale-100.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\LightGray.png" />
     <Content Include="Assets\MediumGray.png" />
