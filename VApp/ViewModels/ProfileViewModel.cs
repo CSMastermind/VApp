@@ -32,10 +32,7 @@ namespace VApp.ViewModels
 
         public string FirstName
         {
-            get
-            {
-                return this.firstName;
-            }
+            get{   return this.firstName;  }
 
             set
             {
@@ -49,10 +46,7 @@ namespace VApp.ViewModels
 
         public string MiddleName
         {
-            get
-            {
-                return this.middleName;
-            }
+            get{    return this.middleName; }
 
             set
             {
@@ -66,10 +60,7 @@ namespace VApp.ViewModels
 
         public string LastName
         {
-            get
-            {
-                return this.lastName;
-            }
+            get{    return this.lastName;   }
 
             set
             {
@@ -83,10 +74,7 @@ namespace VApp.ViewModels
 
         public string Alias
         {
-            get
-            {
-                return this.alias;
-            }
+            get{    return this.alias;  }
 
             set
             {
@@ -100,10 +88,7 @@ namespace VApp.ViewModels
 
         public string Occupation
         {
-            get
-            {
-                return this.occupation;
-            }
+            get{    return this.occupation; }
 
             set
             {
@@ -130,10 +115,7 @@ namespace VApp.ViewModels
 
         public string MaritalStatus
         {
-            get
-            {
-                return this.maritalStatus;
-            }
+            get{    return this.maritalStatus;  }
 
             set
             {
