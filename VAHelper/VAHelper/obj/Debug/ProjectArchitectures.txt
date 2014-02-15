@@ -1,1 +1,0 @@
-c:\users\chris\documents\visual studio 2013\Projects\VAHelper\VAHelper\VAHelper.csproj;neutral
