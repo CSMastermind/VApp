@@ -60,6 +60,10 @@ namespace VApp.ViewModels
 
         private ObservableCollection<string> contactMethods;
 
+        private bool privacyAccepted;
+
+        private bool termsAccepted;
+
         private DelegateCommand saveCommand;
 
         public ProfileViewModel()
@@ -396,6 +400,34 @@ namespace VApp.ViewModels
                 }
 
                 return this.countries;
+            }
+        }
+
+        public bool PrivacyAccepted
+        {
+            get { return this.privacyAccepted; }
+
+            set
+            {
+                if (!value.Equals(this.privacyAccepted))
+                {
+                    this.privacyAccepted = value;
+                    this.NotifyPropertyChanged("PrivacyAccepted");
+                }
+            }
+        }
+
+        public bool TermsAccepted
+        {
+            get { return this.termsAccepted; }
+
+            set
+            {
+                if (!value.Equals(this.termsAccepted))
+                {
+                    this.termsAccepted = value;
+                    this.NotifyPropertyChanged("TermsAccepted");
+                }
             }
         }
 

@@ -88,7 +88,13 @@
 
         <TextBlock Text="Pager (P)" Style="{StaticResource Label}" />
         <TextBox x:Name="PagerBox" Text="{Binding Pager, Mode=TwoWay}" />
+
         
+        <TextBlock Text="Legal" Style="{StaticResource Heading1}" />
+
+        <CheckBox Content="I accept MyHealthEVet's Privacy Policy." IsChecked="{Binding PrivacyAccepted, Mode=TwoWay}" />
+        <CheckBox Content="I accept MyHealthEVet's Terms and Conditions." IsChecked="{Binding TermsAccepted, Mode=TwoWay}" />
+
         <Button Content="Save" HorizontalAlignment="Right" Command="{Binding SaveCommand}" />
     </StackPanel>
 </UserControl>

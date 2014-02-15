@@ -40,6 +40,8 @@ namespace VApp.VAWebsite
         private const string question2Name = "manageUserProfile_profileswlw-select_key:{actionForm.userProfilePasswordHintQuestion2}";
         private const string answer1Name = "manageUserProfile_profiles{actionForm.userProfilePasswordHintAnswer1}";
         private const string answer2Name = "manageUserProfile_profiles{actionForm.userProfilePasswordHintAnswer2}";
+        private const string privacyName = "manageUserProfile_profiles{actionForm.userProfileAcceptPrivacy}";
+        private const string termsName = "manageUserProfile_profiles{actionForm.userProfileAcceptTerms}";
 
         private static HttpClient client = new HttpClient();
 
@@ -102,6 +104,8 @@ namespace VApp.VAWebsite
             profile.Question2 = document.GetElementbyId("hintQuestion2").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
             profile.Answer1 = document.GetElementbyId("hintAnswer1").GetAttributeValue("value", string.Empty);
             profile.Answer2 = document.GetElementbyId("hintAnswer2").GetAttributeValue("value", string.Empty);
+            profile.PrivacyAccepted = document.DocumentNode.Descendants().Single(d => string.Equals(d.GetAttributeValue("name", string.Empty), privacyName, StringComparison.CurrentCultureIgnoreCase)).GetAttributeValue("value", false);
+            profile.TermsAccepted = document.DocumentNode.Descendants().Single(d => string.Equals(d.GetAttributeValue("name", string.Empty), termsName, StringComparison.CurrentCultureIgnoreCase)).GetAttributeValue("value", false);
         }
 
         public static async void SaveProfile(ProfileViewModel profile)
@@ -132,6 +136,8 @@ namespace VApp.VAWebsite
             postParamters.Add(new KeyValuePair<string, string>(question2Name, profile.Question2));
             postParamters.Add(new KeyValuePair<string, string>(answer1Name, profile.Answer1));
             postParamters.Add(new KeyValuePair<string, string>(answer2Name, profile.Answer2));
+            postParamters.Add(new KeyValuePair<string, string>(privacyName, profile.PrivacyAccepted.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(termsName, profile.TermsAccepted.ToString().ToLower()));
 
             HttpContent content = new FormUrlEncodedContent(postParamters);
 
