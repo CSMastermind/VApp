@@ -129,10 +129,10 @@ namespace VApp
             if (this.UsingLogicalPageNavigation()) this.InvalidateVisualState();
 
             // Set the correct user control
-            this.itemDetailGrid.Content = null;
+            this.itemDetailGrid.Children.Clear();
             if (this.itemListView.SelectedItem != null && ((SampleDataItem)this.itemListView.SelectedItem).ControlType != null)
             {
-                this.itemDetailGrid.Content = Activator.CreateInstance(((SampleDataItem)this.itemListView.SelectedItem).ControlType) as UIElement;
+                this.itemDetailGrid.Children.Add(Activator.CreateInstance(((SampleDataItem)this.itemListView.SelectedItem).ControlType) as UIElement);
             }
         }
 
