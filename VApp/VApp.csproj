@@ -136,13 +136,38 @@
     <None Include="VApp_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Assets\account1.png" />
+    <Content Include="Assets\account2.png" />
+    <Content Include="Assets\care_giver1.png" />
+    <Content Include="Assets\coverage.png" />
+    <Content Include="Assets\DarkGray.png" />
+    <Content Include="Assets\download4.png" />
+    <Content Include="Assets\emergency1.png" />
+    <Content Include="Assets\emergency2.png" />
+    <Content Include="Assets\get_care.png" />
+    <Content Include="Assets\goal.png" />
+    <Content Include="Assets\history.png" />
+    <Content Include="Assets\information1.png" />
+    <Content Include="Assets\journal2.png" />
+    <Content Include="Assets\lab3.png" />
+    <Content Include="Assets\library.png" />
+    <Content Include="Assets\list2.png" />
     <Content Include="Assets\Logo.png" />
+    <Content Include="Assets\medication.png" />
+    <Content Include="Assets\mental.png" />
+    <Content Include="Assets\password1.png" />
+    <Content Include="Assets\personal_info.png" />
+    <Content Include="Assets\pharmacy2.png" />
+    <Content Include="Assets\prescription.png" />
+    <Content Include="Assets\research_health.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\StoreLogo.png" />
     <Content Include="Assets\LightGray.png" />
     <Content Include="Assets\MediumGray.png" />
-    <Content Include="Assets\DarkGray.png" />
+    <Content Include="Assets\tracking1.png" />
+    <Content Include="Assets\treatment.png" />
+    <Content Include="Assets\vitals4.png" />
   </ItemGroup>
   <ItemGroup>
     <ApplicationDefinition Include="App.xaml">
