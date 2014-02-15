@@ -41,8 +41,18 @@
 
         <TextBlock Text="Marital Status" Style="{StaticResource Label}" />
         <ComboBox x:Name="MaritalStatusBox" ItemsSource="{Binding MaritalStatuses}" SelectedItem="{Binding MaritalStatus, Mode=TwoWay}" />
+
         
-        
+        <TextBlock Text="Tell Us About Yourself" Style="{StaticResource Heading1}" />
+
+        <CheckBox Content="VA Patient" IsChecked="{Binding IsVAPatient, Mode=TwoWay}" />
+        <CheckBox Content="Veteran" IsChecked="{Binding IsVeteran, Mode=TwoWay}" />
+        <CheckBox Content="Veteran Advocate/Family Member/Friend" IsChecked="{Binding IsVeteranAdvocate, Mode=TwoWay}" />
+        <CheckBox Content="VA Employee" IsChecked="{Binding IsVAEmployee, Mode=TwoWay}" />
+        <CheckBox Content="Health Care Provider" IsChecked="{Binding IsHealthProvider, Mode=TwoWay}" />
+        <CheckBox Content="Other" IsChecked="{Binding IsOther, Mode=TwoWay}" />
+
+
         <TextBlock Text="Primary Address" Style="{StaticResource Heading1}" />
 
         <TextBlock Text="Address Line 1" Style="{StaticResource Label}" />

@@ -42,6 +42,12 @@ namespace VApp.VAWebsite
         private const string answer2Name = "manageUserProfile_profiles{actionForm.userProfilePasswordHintAnswer2}";
         private const string privacyName = "manageUserProfile_profiles{actionForm.userProfileAcceptPrivacy}";
         private const string termsName = "manageUserProfile_profiles{actionForm.userProfileAcceptTerms}";
+        private const string isVAPatientName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsPatient}";
+        private const string isVeteranName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsVeteran}";
+        private const string isVeteranAdvocateName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsPatientAdvocate}";
+        private const string isVAEmployeeName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsEmployee}";
+        private const string isHealthProviderName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsHealthCareProvider}";
+        private const string isOtherName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsOther}";
 
         private static HttpClient client = new HttpClient();
 
@@ -106,12 +112,18 @@ namespace VApp.VAWebsite
             profile.Answer2 = document.GetElementbyId("hintAnswer2").GetAttributeValue("value", string.Empty);
             profile.PrivacyAccepted = document.DocumentNode.Descendants().Single(d => string.Equals(d.GetAttributeValue("name", string.Empty), privacyName, StringComparison.CurrentCultureIgnoreCase)).GetAttributeValue("value", false);
             profile.TermsAccepted = document.DocumentNode.Descendants().Single(d => string.Equals(d.GetAttributeValue("name", string.Empty), termsName, StringComparison.CurrentCultureIgnoreCase)).GetAttributeValue("value", false);
+            profile.IsVAPatient = document.GetElementbyId("vaPatient").GetAttributeValue("value", true);
+            profile.IsVeteranAdvocate = document.GetElementbyId("patientAdvocate").Attributes.Contains("checked");
+            profile.IsVeteran = document.GetElementbyId("veteran").Attributes.Contains("checked");
+            profile.IsVAEmployee = document.GetElementbyId("vaEmployee").Attributes.Contains("checked");
+            profile.IsHealthProvider = document.GetElementbyId("healthCareProvider").Attributes.Contains("checked");
+            profile.IsOther = document.GetElementbyId("isOther").Attributes.Contains("checked");
         }
 
         public static async void SaveProfile(ProfileViewModel profile)
         {
             List<KeyValuePair<string, string>> postParamters = new List<KeyValuePair<string, string>>();
-            postParamters.Add(new KeyValuePair<string, string>(loginTokenName, profile.Token));
+            postParamters.Add(new KeyValuePair<string, string>(profileTokenName, profile.Token));
             postParamters.Add(new KeyValuePair<string, string>(firstNameName, profile.FirstName));
             postParamters.Add(new KeyValuePair<string, string>(middleNameName, profile.MiddleName));
             postParamters.Add(new KeyValuePair<string, string>(lastNameName, profile.LastName));
@@ -138,6 +150,12 @@ namespace VApp.VAWebsite
             postParamters.Add(new KeyValuePair<string, string>(answer2Name, profile.Answer2));
             postParamters.Add(new KeyValuePair<string, string>(privacyName, profile.PrivacyAccepted.ToString().ToLower()));
             postParamters.Add(new KeyValuePair<string, string>(termsName, profile.TermsAccepted.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(isVAPatientName, profile.IsVAPatient.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(isVeteranAdvocateName, profile.IsVeteranAdvocate.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(isVeteranName, profile.IsVeteran.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(isVAEmployeeName, profile.IsVAEmployee.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(isHealthProviderName, profile.IsHealthProvider.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(isOtherName, profile.IsOther.ToString().ToLower()));
 
             HttpContent content = new FormUrlEncodedContent(postParamters);
 

@@ -60,6 +60,18 @@ namespace VApp.ViewModels
 
         private ObservableCollection<string> contactMethods;
 
+        private bool isVAPatient;
+
+        private bool isVeteran;
+
+        private bool isVeteranAdvocate;
+
+        private bool isVAEmployee;
+
+        private bool isHealthProvider;
+
+        private bool isOther;
+
         private bool privacyAccepted;
 
         private bool termsAccepted;
@@ -400,6 +412,90 @@ namespace VApp.ViewModels
                 }
 
                 return this.countries;
+            }
+        }
+
+        public bool IsVAPatient
+        {
+            get { return this.isVAPatient; }
+
+            set
+            {
+                if (!value.Equals(this.isVAPatient))
+                {
+                    this.isVAPatient = value;
+                    this.NotifyPropertyChanged("IsVAPatient");
+                }
+            }
+        }
+
+        public bool IsVeteran
+        {
+            get { return this.isVeteran; }
+
+            set
+            {
+                if (!value.Equals(this.isVeteran))
+                {
+                    this.isVeteran = value;
+                    this.NotifyPropertyChanged("IsVeteran");
+                }
+            }
+        }
+
+        public bool IsVeteranAdvocate
+        {
+            get { return this.isVeteranAdvocate; }
+
+            set
+            {
+                if (!value.Equals(this.isVeteranAdvocate))
+                {
+                    this.isVeteranAdvocate = value;
+                    this.NotifyPropertyChanged("IsVeteranAdvocate");
+                }
+            }
+        }
+
+        public bool IsVAEmployee
+        {
+            get { return this.isVAEmployee; }
+
+            set
+            {
+                if (!value.Equals(this.isVAEmployee))
+                {
+                    this.isVAEmployee = value;
+                    this.NotifyPropertyChanged("IsVAEmployee");
+                }
+            }
+        }
+
+        public bool IsHealthProvider
+        {
+            get { return this.isHealthProvider; }
+
+            set
+            {
+                if (!value.Equals(this.isHealthProvider))
+                {
+                    this.isHealthProvider = value;
+                    this.NotifyPropertyChanged("IsHealthProvider");
+                }
+            }
+        }
+
+        public bool IsOther
+        {
+            get { return this.isOther; }
+
+            set
+            {
+                if (!value.Equals(this.isOther))
+                {
+                    this.isOther = value;
+                    this.NotifyPropertyChanged("IsOther");
+                }
             }
         }
 
