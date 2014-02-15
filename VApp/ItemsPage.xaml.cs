@@ -43,8 +43,9 @@ namespace VApp
         protected override void LoadState(Object navigationParameter, Dictionary<String, Object> pageState)
         {
             // TODO: Create an appropriate data model for your problem domain to replace the sample data
-            var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
-            this.DefaultViewModel["Items"] = sampleDataGroups;
+            var categories =  new List<String>();
+            categories.Add("Personal Information");
+            this.DefaultViewModel["Items"] = categories;
         }
 
         /// <summary>
