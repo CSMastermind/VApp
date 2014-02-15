@@ -127,6 +127,13 @@ namespace VApp
             // to showing the selected item's details.  When the selection is cleared this has the
             // opposite effect.
             if (this.UsingLogicalPageNavigation()) this.InvalidateVisualState();
+
+            // Set the correct user control
+            this.itemDetailGrid.Children.Clear();
+            if (this.itemListView.SelectedItem != null && ((SampleDataItem)this.itemListView.SelectedItem).ControlType != null)
+            {
+                this.itemDetailGrid.Children.Add(Activator.CreateInstance(((SampleDataItem)this.itemListView.SelectedItem).ControlType) as UIElement);
+            }
         }
 
         /// <summary>
