@@ -23,6 +23,12 @@ namespace VApp.VAWebsite
         private const string maritalStatusName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileMaritalStatus}";
         private const string occupationName = "manageUserProfile_profiles{actionForm.userProfileCurrentOccupation}";
         private const string contactMethodName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileContactInfoContactMethod}";
+        private const string emailName = "manageUserProfile_profiles{actionForm.userProfileContactInfoEmail}";
+        private const string mobilePhoneName = "manageUserProfile_profiles{actionForm.userProfileContactInfoMobilePhone}";
+        private const string homePhoneName = "manageUserProfile_profiles{actionForm.userProfileContactInfoHomePhone}";
+        private const string workPhoneName = "manageUserProfile_profiles{actionForm.userProfileContactInfoWorkPhone}";
+        private const string faxName = "manageUserProfile_profiles{actionForm.userProfileContactInfoFax}";
+        private const string pagerName = "manageUserProfile_profiles{actionForm.userProfileContactInfoPager}";
 
         private static HttpClient client = new HttpClient();
 
@@ -68,6 +74,12 @@ namespace VApp.VAWebsite
             profile.Occupation = document.GetElementbyId("currentOccupation").GetAttributeValue("value", string.Empty);
             profile.MaritalStatus = document.GetElementbyId("maritalStatus").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
             profile.ContactMethod = document.GetElementbyId("contactMethod").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
+            profile.Email = document.GetElementbyId("primaryEmail").GetAttributeValue("value", string.Empty);
+            profile.MobilePhone = document.GetElementbyId("mobilePhone").GetAttributeValue("value", string.Empty);
+            profile.HomePhone = document.GetElementbyId("homePhone").GetAttributeValue("value", string.Empty);
+            profile.WorkPhone = document.GetElementbyId("workPhone").GetAttributeValue("value", string.Empty);
+            profile.Fax = document.GetElementbyId("fax").GetAttributeValue("value", string.Empty);
+            profile.Pager = document.GetElementbyId("pager").GetAttributeValue("value", string.Empty);
         }
 
         public static async void SaveProfile(ProfileViewModel profile)
@@ -81,6 +93,12 @@ namespace VApp.VAWebsite
             postParamters.Add(new KeyValuePair<string, string>(maritalStatusName, profile.MaritalStatus));
             postParamters.Add(new KeyValuePair<string, string>(occupationName, profile.Occupation));
             postParamters.Add(new KeyValuePair<string, string>(contactMethodName, profile.ContactMethod));
+            postParamters.Add(new KeyValuePair<string, string>(emailName, profile.Email));
+            postParamters.Add(new KeyValuePair<string, string>(mobilePhoneName, profile.MobilePhone));
+            postParamters.Add(new KeyValuePair<string, string>(homePhoneName, profile.HomePhone));
+            postParamters.Add(new KeyValuePair<string, string>(workPhoneName, profile.WorkPhone));
+            postParamters.Add(new KeyValuePair<string, string>(faxName, profile.Fax));
+            postParamters.Add(new KeyValuePair<string, string>(pagerName, profile.Pager));
 
             HttpContent content = new FormUrlEncodedContent(postParamters);
 
