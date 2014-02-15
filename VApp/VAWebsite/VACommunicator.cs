@@ -29,6 +29,13 @@ namespace VApp.VAWebsite
         private const string workPhoneName = "manageUserProfile_profiles{actionForm.userProfileContactInfoWorkPhone}";
         private const string faxName = "manageUserProfile_profiles{actionForm.userProfileContactInfoFax}";
         private const string pagerName = "manageUserProfile_profiles{actionForm.userProfileContactInfoPager}";
+        private const string address1Name = "manageUserProfile_profiles{actionForm.userProfileAddressStreet1}";
+        private const string address2Name = "manageUserProfile_profiles{actionForm.userProfileAddressStreet2}";
+        private const string cityName = "manageUserProfile_profiles{actionForm.userProfileAddressCity}";
+        private const string stateName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileAddressState}";
+        private const string zipName = "manageUserProfile_profiles{actionForm.userProfileAddressPostalCode}";
+        private const string provinceName = "manageUserProfile_profiles{actionForm.userProfileAddressProvince}";
+        private const string countryName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileAddressCountry}";
 
         private static HttpClient client = new HttpClient();
 
@@ -80,6 +87,13 @@ namespace VApp.VAWebsite
             profile.WorkPhone = document.GetElementbyId("workPhone").GetAttributeValue("value", string.Empty);
             profile.Fax = document.GetElementbyId("fax").GetAttributeValue("value", string.Empty);
             profile.Pager = document.GetElementbyId("pager").GetAttributeValue("value", string.Empty);
+            profile.AddressLine1 = document.GetElementbyId("street1").GetAttributeValue("value", string.Empty);
+            profile.AddressLine2 = document.GetElementbyId("street2").GetAttributeValue("value", string.Empty);
+            profile.City = document.GetElementbyId("city").GetAttributeValue("value", string.Empty);
+            profile.State = document.GetElementbyId("state").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
+            profile.ZipCode = document.GetElementbyId("postalCode").GetAttributeValue("value", string.Empty);
+            profile.Province = document.GetElementbyId("province").GetAttributeValue("value", string.Empty);
+            profile.Country = document.GetElementbyId("country").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
         }
 
         public static async void SaveProfile(ProfileViewModel profile)
@@ -99,6 +113,13 @@ namespace VApp.VAWebsite
             postParamters.Add(new KeyValuePair<string, string>(workPhoneName, profile.WorkPhone));
             postParamters.Add(new KeyValuePair<string, string>(faxName, profile.Fax));
             postParamters.Add(new KeyValuePair<string, string>(pagerName, profile.Pager));
+            postParamters.Add(new KeyValuePair<string, string>(address1Name, profile.AddressLine1));
+            postParamters.Add(new KeyValuePair<string, string>(address2Name, profile.AddressLine2));
+            postParamters.Add(new KeyValuePair<string, string>(cityName, profile.City));
+            postParamters.Add(new KeyValuePair<string, string>(stateName, profile.State));
+            postParamters.Add(new KeyValuePair<string, string>(zipName, profile.ZipCode));
+            postParamters.Add(new KeyValuePair<string, string>(provinceName, profile.Province));
+            postParamters.Add(new KeyValuePair<string, string>(countryName, profile.Country));
 
             HttpContent content = new FormUrlEncodedContent(postParamters);
 
