@@ -36,6 +36,10 @@ namespace VApp.VAWebsite
         private const string zipName = "manageUserProfile_profiles{actionForm.userProfileAddressPostalCode}";
         private const string provinceName = "manageUserProfile_profiles{actionForm.userProfileAddressProvince}";
         private const string countryName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileAddressCountry}";
+        private const string question1Name = "manageUserProfile_profileswlw-select_key:{actionForm.userProfilePasswordHintQuestion1}";
+        private const string question2Name = "manageUserProfile_profileswlw-select_key:{actionForm.userProfilePasswordHintQuestion2}";
+        private const string answer1Name = "manageUserProfile_profiles{actionForm.userProfilePasswordHintAnswer1}";
+        private const string answer2Name = "manageUserProfile_profiles{actionForm.userProfilePasswordHintAnswer2}";
 
         private static HttpClient client = new HttpClient();
 
@@ -94,6 +98,10 @@ namespace VApp.VAWebsite
             profile.ZipCode = document.GetElementbyId("postalCode").GetAttributeValue("value", string.Empty);
             profile.Province = document.GetElementbyId("province").GetAttributeValue("value", string.Empty);
             profile.Country = document.GetElementbyId("country").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
+            profile.Question1 = document.GetElementbyId("hintQuestion1").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
+            profile.Question2 = document.GetElementbyId("hintQuestion2").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
+            profile.Answer1 = document.GetElementbyId("hintAnswer1").GetAttributeValue("value", string.Empty);
+            profile.Answer2 = document.GetElementbyId("hintAnswer2").GetAttributeValue("value", string.Empty);
         }
 
         public static async void SaveProfile(ProfileViewModel profile)
@@ -120,6 +128,10 @@ namespace VApp.VAWebsite
             postParamters.Add(new KeyValuePair<string, string>(zipName, profile.ZipCode));
             postParamters.Add(new KeyValuePair<string, string>(provinceName, profile.Province));
             postParamters.Add(new KeyValuePair<string, string>(countryName, profile.Country));
+            postParamters.Add(new KeyValuePair<string, string>(question1Name, profile.Question1));
+            postParamters.Add(new KeyValuePair<string, string>(question2Name, profile.Question2));
+            postParamters.Add(new KeyValuePair<string, string>(answer1Name, profile.Answer1));
+            postParamters.Add(new KeyValuePair<string, string>(answer2Name, profile.Answer2));
 
             HttpContent content = new FormUrlEncodedContent(postParamters);
 
