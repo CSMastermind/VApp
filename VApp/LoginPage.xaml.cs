@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using VApp.ViewModels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
@@ -24,6 +25,7 @@ namespace VApp
         public LoginPage()
         {
             this.InitializeComponent();
+            this.DataContext = new LoginPageViewModel();
         }
 
         /// <summary>

@@ -35,6 +35,8 @@ namespace VApp
             this.Suspending += OnSuspending;
         }
 
+        public static Frame RootFrame;
+
         /// <summary>
         /// Invoked when the application is launched normally by the end user.  Other entry points
         /// will be used when the application is launched to open a specific file, to display
@@ -52,6 +54,7 @@ namespace VApp
             {
                 // Create a Frame to act as the navigation context and navigate to the first page
                 rootFrame = new Frame();
+                RootFrame = rootFrame;
                 //Associate the frame with a SuspensionManager key                                
                 SuspensionManager.RegisterFrame(rootFrame, "AppFrame");
 
