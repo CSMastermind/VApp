@@ -12,9 +12,17 @@ namespace VApp.VAWebsite
 {
     public static class VACommunicator
     {
-        private const string tokenId = "loginPortlet_learnAboutorg.apache.struts.taglib.html.TOKEN";
-        private const string usernameId = "loginPortlet_learnAbout{actionForm.userName}";
-        private const string passwordId = "loginPortlet_learnAbout{actionForm.password}";
+        private const string loginTokenName = "loginPortlet_learnAboutorg.apache.struts.taglib.html.TOKEN";
+        private const string profileTokenName = "manageUserProfile_profilesorg.apache.struts.taglib.html.TOKEN";
+        private const string usernameName = "loginPortlet_learnAbout{actionForm.userName}";
+        private const string passwordName = "loginPortlet_learnAbout{actionForm.password}";
+        private const string firstNameName = "manageUserProfile_profiles{actionForm.userProfileFirstName}";
+        private const string middleNameName = "manageUserProfile_profiles{actionForm.userProfileMiddleName}";
+        private const string lastNameName = "manageUserProfile_profiles{actionForm.userProfileLastName}";
+        private const string aliasName = "manageUserProfile_profiles{actionForm.userProfileUserAlias}";
+        private const string maritalStatusName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileMaritalStatus}";
+        private const string occupationName = "manageUserProfile_profiles{actionForm.userProfileCurrentOccupation}";
+        private const string contactMethodName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileContactInfoContactMethod}";
 
         private static HttpClient client = new HttpClient();
 
@@ -28,9 +36,9 @@ namespace VApp.VAWebsite
                 string postUri = ExtractAction(page);
 
                 List<KeyValuePair<string, string>> postParamters = new List<KeyValuePair<string, string>>();
-                postParamters.Add(new KeyValuePair<string, string>(tokenId, token));
-                postParamters.Add(new KeyValuePair<string, string>(usernameId, username));
-                postParamters.Add(new KeyValuePair<string, string>(passwordId, password));
+                postParamters.Add(new KeyValuePair<string, string>(loginTokenName, token));
+                postParamters.Add(new KeyValuePair<string, string>(usernameName, username));
+                postParamters.Add(new KeyValuePair<string, string>(passwordName, password));
 
                 HttpContent content = new FormUrlEncodedContent(postParamters);
 
@@ -52,12 +60,33 @@ namespace VApp.VAWebsite
             HtmlDocument document = new HtmlDocument();
             document.LoadHtml(page);
 
+            profile.Token = ExtractToken(page);
             profile.FirstName = document.GetElementbyId("firstName").GetAttributeValue("value", string.Empty);
             profile.MiddleName = document.GetElementbyId("middleName").GetAttributeValue("value", string.Empty);
             profile.LastName = document.GetElementbyId("lastName").GetAttributeValue("value", string.Empty);
             profile.Alias = document.GetElementbyId("userAlias").GetAttributeValue("value", string.Empty);
             profile.Occupation = document.GetElementbyId("currentOccupation").GetAttributeValue("value", string.Empty);
             profile.MaritalStatus = document.GetElementbyId("maritalStatus").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
+            profile.ContactMethod = document.GetElementbyId("contactMethod").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
+        }
+
+        public static async void SaveProfile(ProfileViewModel profile)
+        {
+            List<KeyValuePair<string, string>> postParamters = new List<KeyValuePair<string, string>>();
+            postParamters.Add(new KeyValuePair<string, string>(loginTokenName, profile.Token));
+            postParamters.Add(new KeyValuePair<string, string>(firstNameName, profile.FirstName));
+            postParamters.Add(new KeyValuePair<string, string>(middleNameName, profile.MiddleName));
+            postParamters.Add(new KeyValuePair<string, string>(lastNameName, profile.LastName));
+            postParamters.Add(new KeyValuePair<string, string>(aliasName, profile.Alias));
+            postParamters.Add(new KeyValuePair<string, string>(maritalStatusName, profile.MaritalStatus));
+            postParamters.Add(new KeyValuePair<string, string>(occupationName, profile.Occupation));
+            postParamters.Add(new KeyValuePair<string, string>(contactMethodName, profile.ContactMethod));
+
+            HttpContent content = new FormUrlEncodedContent(postParamters);
+
+            HttpResponseMessage response = await client.PostAsync("https://www.myhealth.va.gov:443/mhv-portal-web/mhv.portal?_nfpb=true&_windowLabel=manageUserProfile_profiles&manageUserProfile_profiles_actionOverride=%2Fgov%2Fva%2Fmed%2Fmhv%2Fusermgmt%2Fportlet%2FsaveAction&_pageLabel=profilesHome", content);
+
+            string page = await response.Content.ReadAsStringAsync();
         }
 
         private static string ExtractToken(string pageHtml)

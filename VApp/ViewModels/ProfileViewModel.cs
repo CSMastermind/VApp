@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Collections.ObjectModel;
 using VApp.Common;
 using VApp.VAWebsite;
+using System.Windows.Input;
 
 namespace VApp.ViewModels
 {
@@ -24,6 +25,12 @@ namespace VApp.ViewModels
         private ObservableCollection<string> maritalStatuses;
 
         private string maritalStatus;
+
+        private string contactMethod;
+
+        private ObservableCollection<string> contactMethods;
+
+        private DelegateCommand saveCommand;
 
         public ProfileViewModel()
         {
@@ -127,9 +134,56 @@ namespace VApp.ViewModels
             }
         }
 
-        public void PopulateFromWeb()
+        public ICollection<string> ContactMethods
+        {
+            get
+            {
+                if (this.contactMethods == null)
+                {
+                    this.contactMethods = new ObservableCollection<string>() { "Email (E)", "Fax (F)", "Home Phone (H)", "Mobile Phone (M)", "Pager (P)", "Work Phone (W)"};
+                }
+
+                return this.contactMethods;
+            }
+        }
+
+        public string ContactMethod
+        {
+            get { return this.contactMethod; }
+
+            set
+            {
+                if (value != null && !value.Equals(this.contactMethod))
+                {
+                    this.contactMethod = value;
+                    this.NotifyPropertyChanged("ContactMethod");
+                }
+            }
+        }
+
+        public ICommand SaveCommand
+        {
+            get
+            {
+                if (this.saveCommand == null)
+                {
+                    this.saveCommand = new DelegateCommand(o => this.Save());
+                }
+
+                return this.saveCommand;
+            }
+        }
+
+        public string Token { get; set; }
+
+        private void PopulateFromWeb()
         {
             VACommunicator.PopulateProfile(this);
+        }
+
+        private void Save()
+        {
+            VACommunicator.SaveProfile(this);
         }
     }
 }
