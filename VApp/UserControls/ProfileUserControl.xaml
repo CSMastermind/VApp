@@ -20,20 +20,22 @@
         <TextBlock Text="Identification" Style="{StaticResource Heading1}" />
         
         <TextBlock Text="First Name" />
-        <TextBox x:Name="FirstNameBox" />
+        <TextBox x:Name="FirstNameBox" Text="{Binding FirstName}" />
 
         <TextBlock Text="Middle Name" />
-        <TextBox x:Name="MiddleNameBox"  />
+        <TextBox x:Name="MiddleNameBox" Text="{Binding MiddleName}"  />
 
         <TextBlock Text="Last Name" />
-        <TextBox x:Name="LastNameBox"  />
+        <TextBox x:Name="LastNameBox" Text="{Binding LastName}"  />
 
         <TextBlock Text="Alias" />
-        <TextBox x:Name="AliasBox"  />
+        <TextBox x:Name="AliasBox" Text="{Binding Alias}" />
 
         <TextBlock Text="Occupation" />
-        <TextBox x:Name="OccupationBox"  />
+        <TextBox x:Name="OccupationBox" Text="{Binding Occupation}" />
 
+        <TextBlock Text="Marital Status" />
+        <ComboBox x:Name="MaritalStatusBox" ItemsSource="{Binding MaritalStatuses}" SelectedItem="{Binding MaritalStatus, Mode=TwoWay}" />
         
         <TextBlock Text="Relationship to the VA" Style="{StaticResource Heading1}" />
 

@@ -3,7 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 using VApp.Common;
+using VApp.VAWebsite;
 
 namespace VApp.ViewModels
 {
@@ -19,8 +21,13 @@ namespace VApp.ViewModels
 
         private string occupation;
 
+        private ObservableCollection<string> maritalStatuses;
+
+        private string maritalStatus;
+
         public ProfileViewModel()
         {
+            this.PopulateFromWeb();
         }
 
         public string FirstName
@@ -108,5 +115,39 @@ namespace VApp.ViewModels
             }
         }
 
+        public ICollection<string> MaritalStatuses
+        {
+            get
+            {
+                if (this.maritalStatus == null)
+                {
+                    this.maritalStatuses = new ObservableCollection<string>() { "Divorced", "Married", "Single", "Widowed" };
+                }
+
+                return this.maritalStatuses;
+            }
+        }
+
+        public string MaritalStatus
+        {
+            get
+            {
+                return this.maritalStatus;
+            }
+
+            set
+            {
+                if (value != null && !value.Equals(this.maritalStatus))
+                {
+                    this.maritalStatus = value;
+                    this.NotifyPropertyChanged("MaritalStatus");
+                }
+            }
+        }
+
+        public void PopulateFromWeb()
+        {
+            VACommunicator.PopulateProfile(this);
+        }
     }
 }

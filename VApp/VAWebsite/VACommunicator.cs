@@ -1,10 +1,12 @@
-﻿using System;
+﻿using HtmlAgilityPack;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using VApp.ViewModels;
 
 namespace VApp.VAWebsite
 {
@@ -41,6 +43,21 @@ namespace VApp.VAWebsite
             {
                 return false;
             }
+        }
+
+        public static async void PopulateProfile(ProfileViewModel profile)
+        {
+            HttpResponseMessage response = await client.GetAsync("https://www.myhealth.va.gov/mhv-portal-web/mhv.portal?_nfpb=true&_pageLabel=profiles&_nfls=false");
+            string page = await response.Content.ReadAsStringAsync();
+            HtmlDocument document = new HtmlDocument();
+            document.LoadHtml(page);
+
+            profile.FirstName = document.GetElementbyId("firstName").GetAttributeValue("value", string.Empty);
+            profile.MiddleName = document.GetElementbyId("middleName").GetAttributeValue("value", string.Empty);
+            profile.LastName = document.GetElementbyId("lastName").GetAttributeValue("value", string.Empty);
+            profile.Alias = document.GetElementbyId("userAlias").GetAttributeValue("value", string.Empty);
+            profile.Occupation = document.GetElementbyId("currentOccupation").GetAttributeValue("value", string.Empty);
+            profile.MaritalStatus = document.GetElementbyId("maritalStatus").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
         }
 
         private static string ExtractToken(string pageHtml)
