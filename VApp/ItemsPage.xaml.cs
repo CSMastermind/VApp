@@ -16,8 +16,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Items Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234233
-
 namespace VApp
 {
     /// <summary>
@@ -46,10 +44,6 @@ namespace VApp
 
             var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
             this.DefaultViewModel["Items"] = sampleDataGroups;
-
-            /*var categories =  new List<String>();
-            categories.Add("Personal Information");
-            this.DefaultViewModel["Items"] = categories;*/
         }
 
         /// <summary>

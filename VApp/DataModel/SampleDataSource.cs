@@ -12,19 +12,8 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Imaging;
 using System.Collections.Specialized;
 
-// The data model defined by this file serves as a representative example of a strongly-typed
-// model that supports notification when members are added, removed, or modified.  The property
-// names chosen coincide with data bindings in the standard item templates.
-//
-// Applications may use this model as a starting point and build on it, or discard it entirely and
-// replace it with something appropriate to their needs.
-
 namespace VApp.Data
 {
-    /// <summary>
-    /// Base class for <see cref="SampleDataItem"/> and <see cref="SampleDataGroup"/> that
-    /// defines properties common to both.
-    /// </summary>
     [Windows.Foundation.Metadata.WebHostHidden]
     public abstract class SampleDataCommon : VApp.Common.BindableBase
     {
@@ -100,9 +89,7 @@ namespace VApp.Data
         }
     }
 
-    /// <summary>
-    /// Generic item data model.
-    /// </summary>
+    // Generic item data model.
     public class SampleDataItem : SampleDataCommon
     {
         public SampleDataItem(String uniqueId, String title, String subtitle, String imagePath, String description, String content, SampleDataGroup group)
@@ -127,9 +114,7 @@ namespace VApp.Data
         }
     }
 
-    /// <summary>
-    /// Generic group data model.
-    /// </summary>
+    // Generic group data model.
     public class SampleDataGroup : SampleDataCommon
     {
         public SampleDataGroup(String uniqueId, String title, String subtitle, String imagePath, String description)
@@ -215,12 +200,7 @@ namespace VApp.Data
         }
     }
 
-    /// <summary>
-    /// Creates a collection of groups and items with hard-coded content.
-    /// 
-    /// SampleDataSource initializes with placeholder data rather than live production
-    /// data so that sample data is provided at both design-time and run-time.
-    /// </summary>
+    // Creates a collection of groups and items with hard-coded content.
     public sealed class SampleDataSource
     {
         private static SampleDataSource _sampleDataSource = new SampleDataSource();
