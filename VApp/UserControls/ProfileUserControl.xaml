@@ -6,7 +6,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
-    d:DesignHeight="400"
+    d:DesignHeight="600"
     d:DesignWidth="400">
     
     <UserControl.Resources>
@@ -25,24 +25,32 @@
         <TextBlock Text="Identification" Style="{StaticResource Heading1}" />
 
         <TextBlock Text="First Name" Style="{StaticResource Label}" />
-        <TextBox x:Name="FirstNameBox" Text="{Binding FirstName}" />
+        <TextBox x:Name="FirstNameBox" Text="{Binding FirstName, Mode=TwoWay}" />
 
         <TextBlock Text="Middle Name" Style="{StaticResource Label}" />
-        <TextBox x:Name="MiddleNameBox" Text="{Binding MiddleName}"  />
+        <TextBox x:Name="MiddleNameBox" Text="{Binding MiddleName, Mode=TwoWay}"  />
 
         <TextBlock Text="Last Name" Style="{StaticResource Label}" />
-        <TextBox x:Name="LastNameBox" Text="{Binding LastName}"  />
+        <TextBox x:Name="LastNameBox" Text="{Binding LastName, Mode=TwoWay}"  />
 
         <TextBlock Text="Alias" Style="{StaticResource Label}" />
-        <TextBox x:Name="AliasBox" Text="{Binding Alias}" />
+        <TextBox x:Name="AliasBox" Text="{Binding Alias, Mode=TwoWay}" />
 
         <TextBlock Text="Occupation" Style="{StaticResource Label}" />
-        <TextBox x:Name="OccupationBox" Text="{Binding Occupation}" />
+        <TextBox x:Name="OccupationBox" Text="{Binding Occupation, Mode=TwoWay}" />
 
         <TextBlock Text="Marital Status" Style="{StaticResource Label}" />
         <ComboBox x:Name="MaritalStatusBox" ItemsSource="{Binding MaritalStatuses}" SelectedItem="{Binding MaritalStatus, Mode=TwoWay}" />
         
+        
         <TextBlock Text="Relationship to the VA" Style="{StaticResource Heading1}" />
 
+
+        <TextBlock Text="Contact Information" Style="{StaticResource Heading1}" />
+
+        <TextBlock Text="Contact Method" Style="{StaticResource Label}" />
+        <ComboBox x:Name="ContactMethodBox" ItemsSource="{Binding ContactMethods}" SelectedItem="{Binding ContactMethod, Mode=TwoWay}" />
+
+        <Button Content="Save" HorizontalAlignment="Right" Command="{Binding SaveCommand}" />
     </StackPanel>
 </UserControl>
