@@ -79,9 +79,7 @@
             d:DataContext="{Binding AllGroups[0].Items[0], Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}"
             Style="{StaticResource VerticalScrollViewerStyle}">
 
-            <Grid x:Name="itemDetailGrid" Margin="0,60,0,50">
-                <uc:ProfileUserControl />
-            </Grid>
+            <ScrollViewer x:Name="itemDetailGrid" Margin="0,60,0,50" Padding="20" HorizontalScrollBarVisibility="Auto" />
         </ScrollViewer>
 
         <VisualStateManager.VisualStateGroups>
