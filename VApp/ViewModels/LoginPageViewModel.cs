@@ -105,7 +105,7 @@ namespace VApp.ViewModels
 
             if (await VACommunicator.Authenticate(this.Username, passwordBox.Password))
             {
-                App.RootFrame.Navigate(typeof(TestPage), "AllGroups");
+                App.RootFrame.Navigate(typeof(ItemsPage), "AllGroups");
             }
             else
             {
