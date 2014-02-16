@@ -84,7 +84,7 @@ namespace VApp.VAWebsite
             }
         }
 
-        public static async void PopulateProfile(ProfileViewModel profile)
+        public static async Task PopulateProfile(ProfileViewModel profile)
         {
             HttpResponseMessage response = await client.GetAsync("https://www.myhealth.va.gov/mhv-portal-web/mhv.portal?_nfpb=true&_pageLabel=profiles&_nfls=false");
             string page = await response.Content.ReadAsStringAsync();
@@ -132,7 +132,7 @@ namespace VApp.VAWebsite
             profile.IsOrganDonor = document.GetElementbyId("organDonor").Attributes.Contains("checked");
         }
 
-        public static async void SaveProfile(ProfileViewModel profile)
+        public static async Task SaveProfile(ProfileViewModel profile)
         {
             List<KeyValuePair<string, string>> postParamters = new List<KeyValuePair<string, string>>();
             postParamters.Add(new KeyValuePair<string, string>(profileTokenName, profile.Token));
