@@ -1,0 +1,21 @@
+﻿<UserControl
+    x:Class="VApp.UserControls.Mental_Health"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VApp.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="600" Width="550.597">
+
+    <Grid Margin="0,0,36,0">
+        <Image Name="Alcohol" HorizontalAlignment="Left" Height="128" Margin="22,11,0,0" VerticalAlignment="Top" Source="ms-appx:///Assets/alcohol.png" Width="132"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="The following questions are a screening focusing on symptoms of alcohol dependence. Please read each question carefully, then select the appropriate answer. This entire screening is processed on this local computer. No information is collected, stored or sent over the Internet. To ensure complete privacy, exit your web browser after completing this screening." VerticalAlignment="Bottom" Margin="132,0,0,513" Height="76" Width="419" FontFamily="Global User Interface"/>
+        <Image x:Name="Alcohol_Copy" HorizontalAlignment="Left" Height="109" Margin="22,165,0,0" VerticalAlignment="Top" Source="ms-appx:///Assets/depression.png" Width="110"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="The following questions are a screening focusing on symptoms of depression. Please read each question carefully, then select the answer that indicates how much you have been bothered by that problem in the past 2 weeks. This entire screening is processed on this local computer. No information is collected, stored or sent over the Internet." VerticalAlignment="Bottom" Margin="132,0,0,359" Height="76" Width="419" FontFamily="Global User Interface"/>
+        <Image x:Name="Alcohol_Copy1" HorizontalAlignment="Left" Height="109" Margin="22,320,0,0" VerticalAlignment="Top" Source="ms-appx:///Assets/ptsd.png" Width="110"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="The following questions are a list of problems and complaints that veterans sometimes have in response to stressful military experiences. Please read each question carefully, then select the answer that indicates how much you have been bothered by that problem in the past month. This entire screening is processed on this local computer. No information is collected, stored or sent over the Internet. " VerticalAlignment="Bottom" Margin="132,0,0,203" Height="77" Width="419" FontFamily="Global User Interface"/>
+        <Image x:Name="Alcohol_Copy2" HorizontalAlignment="Left" Height="109" Margin="22,457,0,0" VerticalAlignment="Top" Source="ms-appx:///Assets/drugs.png" Width="110"/>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" Text="The following questions will ask you about your experience of using these substances across your lifetime and in the past three months. These substances can be smoked, swallowed, snorted, inhaled, injected or taken in the form of pills." VerticalAlignment="Bottom" Margin="132,0,0,67" Height="76" Width="419" FontFamily="Global User Interface"/>
+    </Grid>
+</UserControl>

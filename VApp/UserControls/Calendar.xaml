@@ -1,0 +1,48 @@
+﻿<UserControl
+    x:Class="VApp.UserControls.Calendar"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="768"
+    d:DesignWidth="1024" Loaded="UserControl_Loaded">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+    
+            <!-- Header -->
+            <Rectangle Grid.Row="0" Grid.ColumnSpan="3" 
+                        Style="{StaticResource CalendarHeaderBox}" />
+            <TextBlock Grid.Column="1" Name="CurrentDateText" 
+                        Style="{StaticResource CalendarHeader}" />
+    
+            <!-- Navigation Button -->
+            <Button Name="PreviousButton" Grid.Column="0" Content="&lt;" 
+                    HorizontalAlignment="Left" Margin="20" 
+                    Tapped="PreviousButton_Tapped" />
+            <Button Name="NextButton" Grid.Column="2" Content="&gt;" 
+                    HorizontalAlignment="Right" Margin="20" 
+                    Tapped="NextButton_Tapped" />
+    
+            <!-- Calendar Grid -->
+            <Grid Grid.Row="1" Grid.ColumnSpan="3" Name="CalendarGrid">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+            </Grid>
+        </Grid>
+</UserControl>
