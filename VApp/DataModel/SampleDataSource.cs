@@ -394,7 +394,7 @@ namespace VApp.Data
                     "",
                     "Assets/goal.png",
                     "Record and track your personal goals",
-                    null,
+                    typeof(GoalsUserControl),
                     group4));
             this.AllGroups.Add(group4);
 
