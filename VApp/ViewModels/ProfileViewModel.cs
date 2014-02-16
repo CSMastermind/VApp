@@ -12,6 +12,8 @@ namespace VApp.ViewModels
 {
     public class ProfileViewModel : DefaultNotifyPropertyChanged
     {
+        private bool isLoading;
+
         private string firstName;
 
         private string middleName;
@@ -86,7 +88,22 @@ namespace VApp.ViewModels
 
         public ProfileViewModel()
         {
+            this.IsLoading = false;
             this.PopulateFromWeb();
+        }
+
+        public bool IsLoading
+        {
+            get { return this.isLoading; }
+
+            set
+            {
+                if (!value.Equals(this.isLoading))
+                {
+                    this.isLoading = value;
+                    this.NotifyPropertyChanged("IsLoading");
+                }
+            }
         }
 
         public string FirstName
@@ -605,14 +622,18 @@ namespace VApp.ViewModels
 
         public string Token { get; set; }
 
-        private void PopulateFromWeb()
+        private async void PopulateFromWeb()
         {
-            VACommunicator.PopulateProfile(this);
+            this.IsLoading = true;
+            await VACommunicator.PopulateProfile(this);
+            this.IsLoading = false;
         }
 
-        private void Save()
+        private async void Save()
         {
-            VACommunicator.SaveProfile(this);
+            this.IsLoading = true;
+            await VACommunicator.SaveProfile(this);
+            this.IsLoading = false;
         }
     }
 }
