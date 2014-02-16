@@ -296,7 +296,7 @@ namespace VApp.Data
                     "",
                     "Assets/treatment.png",
                     "Record the places you have been treated",
-                    null,
+                    typeof(TreatmentFacilitiesUserControl),
                     group2));
             group2.Items.Add(new SampleDataItem("Group-2-Item-3",
                     "My Coverage",

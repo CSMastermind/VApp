@@ -149,6 +149,9 @@
     <Compile Include="UserControls\RefillmypreUserControl.xaml.cs">
       <DependentUpon>RefillmypreUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TreatmentFacilitiesUserControl.xaml.cs">
+      <DependentUpon>TreatmentFacilitiesUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VAWebsite\VACommunicator.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
@@ -283,6 +286,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\RefillmypreUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TreatmentFacilitiesUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
