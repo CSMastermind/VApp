@@ -143,6 +143,8 @@
   <ItemGroup>
     <Content Include="Assets\account1.png" />
     <Content Include="Assets\account2.png" />
+    <Content Include="Assets\appointment.png" />
+    <Content Include="Assets\calendar.png" />
     <Content Include="Assets\care_giver1.png" />
     <Content Include="Assets\coverage.png" />
     <Content Include="Assets\DarkGray.png" />
@@ -165,6 +167,7 @@
     <Content Include="Assets\personal_info.png" />
     <Content Include="Assets\pharmacy2.png" />
     <Content Include="Assets\prescription.png" />
+    <Content Include="Assets\reminder.png" />
     <Content Include="Assets\research_health.png" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\Logo.scale-140.png" />
