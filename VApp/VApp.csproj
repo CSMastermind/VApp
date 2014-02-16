@@ -146,6 +146,7 @@
     <Content Include="Assets\download4.png" />
     <Content Include="Assets\emergency1.png" />
     <Content Include="Assets\emergency2.png" />
+    <Content Include="Assets\flag.jpg" />
     <Content Include="Assets\get_care.png" />
     <Content Include="Assets\goal.png" />
     <Content Include="Assets\history.png" />
