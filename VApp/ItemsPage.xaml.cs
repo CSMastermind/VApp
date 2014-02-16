@@ -15,6 +15,7 @@ using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
+using VApp.VAWebsite;
 
 namespace VApp
 {
@@ -44,6 +45,7 @@ namespace VApp
 
             var sampleDataGroups = SampleDataSource.GetGroups((String)navigationParameter);
             this.DefaultViewModel["Items"] = sampleDataGroups;
+            this.DefaultViewModel["UserFirstName"] = VACommunicator.UserFirstName;
         }
 
         /// <summary>

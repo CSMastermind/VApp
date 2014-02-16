@@ -72,9 +72,9 @@
             <!--<Button x:Name="backButton" Click="GoBack" IsEnabled="{Binding Frame.CanGoBack, ElementName=pageRoot}" Style="{StaticResource BackButtonStyle}"/>-->
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{StaticResource AppName}" IsHitTestVisible="false" Style="{StaticResource PageHeaderTextStyle}" Margin="120,0,30,40"/>
         </Grid>
-        <Grid HorizontalAlignment="Right" Height="75" Margin="0,10,10,0" VerticalAlignment="Top" Width="225">
+        <Grid HorizontalAlignment="Right" Height="75" Margin="0,10,10,0" VerticalAlignment="Top" Width="300">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="0.8*" />
                 <ColumnDefinition Width="2*" />
             </Grid.ColumnDefinitions>
             <Grid Background="Gray" Grid.Column="0">
@@ -84,7 +84,7 @@
                     </Grid>
                 </Viewbox>
             </Grid>
-            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="25" Text="Timothy" />
+            <TextBlock Grid.Column="1" HorizontalAlignment="Left" Margin="10,0,0,0" VerticalAlignment="Center" FontSize="25" Text="{Binding UserFirstName}" />
         </Grid>
 
         <VisualStateManager.VisualStateGroups>

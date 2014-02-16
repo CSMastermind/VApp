@@ -57,6 +57,8 @@ namespace VApp.VAWebsite
 
         private static HttpClient client = new HttpClient();
 
+        public static string UserFirstName { get; private set; }
+
         public static async Task<bool> Authenticate(string username, string password)
         {
             try
@@ -75,6 +77,8 @@ namespace VApp.VAWebsite
 
                 response = await client.PostAsync(postUri, content);
                 page = await response.Content.ReadAsStringAsync();
+
+                UserFirstName = ExtractUserFirstName(page);
 
                 return page.Contains("Logged On As:");
             }
@@ -222,6 +226,21 @@ namespace VApp.VAWebsite
             Regex tokenRegex = new Regex("<form action=\"https://www.myhealth.va.gov:443/mhv-portal-web/anonymous.portal.*\"");
             Match match = tokenRegex.Match(pageHtml);
             return match.Value.Replace("<form action=\"", string.Empty).Replace(" method=\"post\"", string.Empty).Replace("\"", string.Empty);
+        }
+
+        private static string ExtractUserFirstName(string pageHtml)
+        {
+            try
+            {
+
+                Regex tokenRegex = new Regex("Logged On As: [A-z\\-]*");
+                Match match = tokenRegex.Match(pageHtml);
+                return match.Value.Replace("Logged On As: ", string.Empty);
+            }
+            catch
+            {
+                return "Welcome!";
+            }
         }
     }
 }
