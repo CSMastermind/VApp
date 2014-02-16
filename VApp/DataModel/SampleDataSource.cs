@@ -345,7 +345,7 @@ namespace VApp.Data
                     "",
                     "Assets/history.png",
                     "See the prescriptions you have had refilled online",
-                    null,
+                    typeof(PrehistoryUserControl),
                     group3));
             group3.Items.Add(new SampleDataItem("Group-3-Item-3",
                     "My Medications + Supplements",
