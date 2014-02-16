@@ -359,7 +359,7 @@ namespace VApp.Data
                     "",
                     "Assets/list2.png",
                     "See the medicines your VA Doctors have prescribed",
-                    null,
+                    typeof(MedicationSummaryUserControl),
                     group3));
             this.AllGroups.Add(group3);
 
