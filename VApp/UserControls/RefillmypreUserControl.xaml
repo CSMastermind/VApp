@@ -11,6 +11,7 @@
     d:DesignWidth="400">
     
     <Grid>
+        <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -33,5 +34,9 @@
         <Border Grid.Column="1" Grid.Row="1"  BorderBrush="{StaticResource AppBarBorderThemeBrush}">
             <CheckBox HorizontalAlignment="Center"/>
         </Border>
+
     </Grid>
+    <Button Content="Submit" HorizontalAlignment="Center"  Grid.Row="2" Width="100" Grid.ColumnSpan="2"/>
+    </Grid>
+
 </UserControl>
