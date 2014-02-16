@@ -438,6 +438,27 @@ namespace VApp.Data
                     "",
                     "Assets/documents.png",
                     "Download and save important military records");
+            group6.Items.Add(new SampleDataItem("Group-6-Item-1",
+                    "Add Document",
+                    "",
+                    "Assets/library.png",
+                    "Store a medial or military document so you can access it from anywhere",
+                    typeof(Library),
+                    group6));
+            group6.Items.Add(new SampleDataItem("Group-6-Item-2",
+                    "Find Forms",
+                    "",
+                    "Assets/library.png",
+                    "Search through the VA forms",
+                    typeof(Library),
+                    group6));
+            group6.Items.Add(new SampleDataItem("Group-6-Item-3",
+                    "Manage Documents",
+                    "",
+                    "Assets/library.png",
+                    "View and modify your records",
+                    typeof(Library),
+                    group6));
             this.AllGroups.Add(group6);
         }
     }
