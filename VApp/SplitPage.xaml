@@ -20,7 +20,7 @@
             Source="{Binding Items}"
             d:Source="{Binding AllGroups[0].Items, Source={d:DesignInstance Type=data:SampleDataSource, IsDesignTimeCreatable=True}}"/>
     </Page.Resources>
-
+    
     <!--
         This grid acts as a root panel for the page that defines two rows:
         * Row 0 contains the back button and page title
@@ -39,6 +39,7 @@
             <ColumnDefinition x:Name="primaryColumn" Width="610"/>
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
+        
 
         <!-- Back button and page title -->
         <Grid x:Name="titlePanel">
@@ -53,6 +54,8 @@
                 Style="{StaticResource BackButtonStyle}"/>
             <TextBlock x:Name="pageTitle" Grid.Column="1" Text="{Binding Title}" Style="{StaticResource PageHeaderTextStyle}" Margin="0,0,-1,40"/>
         </Grid>
+        
+
 
         <!-- Vertical scrolling item list -->
         <ListView
@@ -67,6 +70,7 @@
             IsSwipeEnabled="False"
             SelectionChanged="ItemListView_SelectionChanged"
             ItemTemplate="{StaticResource Standard130ItemTemplate}"/>
+
 
         <!-- Details for selected item -->
         <ScrollViewer

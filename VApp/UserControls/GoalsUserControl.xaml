@@ -1,0 +1,57 @@
+﻿<UserControl
+    x:Class="VApp.UserControls.GoalsUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VApp.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="300"
+    d:DesignWidth="600"
+    FontSize="15">
+    
+    <UserControl.Resources>
+        <Style x:Key="Heading1" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="26" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+        </Style>
+        <Style x:Key="TableHeader" TargetType="StackPanel">
+            <Setter Property="Background" Value="{StaticResource ApplicationSecondaryForegroundThemeBrush}" />
+        </Style>
+    </UserControl.Resources>
+    
+    <StackPanel>
+        <TextBlock Style="{StaticResource Heading1}" Text="Current Goals" />
+        <TextBlock Text="You do not currently have any active goals." TextWrapping="Wrap" />
+        <Button Content="Add New" HorizontalAlignment="Right" Margin="10" />
+
+        <TextBlock Style="{StaticResource Heading1}" Text="Completed Goals" />
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <StackPanel Grid.Column="0" Grid.Row="0" Style="{StaticResource TableHeader}">
+                <TextBlock Text="Name" TextAlignment="Center" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Grid.Row="0" Style="{StaticResource TableHeader}">
+                <TextBlock Text="Category" TextAlignment="Center" />
+            </StackPanel>
+
+            <StackPanel Grid.Column="2" Grid.Row="0" Style="{StaticResource TableHeader}">
+                <TextBlock Text="Date Completed" TextAlignment="Center" />
+            </StackPanel>
+
+            <TextBlock Grid.Column="0" Grid.Row="1" Text="Lose 10 lbs." />
+            <TextBlock Grid.Column="1" Grid.Row="1" Text="Fitness" />
+            <TextBlock Grid.Column="2" Grid.Row="1" Text="Mon 06/03/13" />
+        </Grid>
+    </StackPanel>
+</UserControl>

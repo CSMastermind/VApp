@@ -19,7 +19,7 @@
 
             <!-- Application-specific resources -->
 
-            <x:String x:Key="AppName">VApp</x:String>
+            <x:String x:Key="AppName">Veteran's Hub</x:String>
             <common:BooleanToVisibilityConverter x:Key="BoolToVisibility" />
         </ResourceDictionary>
     </Application.Resources>
