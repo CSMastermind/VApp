@@ -122,6 +122,18 @@
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\RichTextColumns.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="UserControls\ChangePasswordUserControl.xaml.cs">
+      <DependentUpon>ChangePasswordUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DownloadDataUserControl.xaml.cs">
+      <DependentUpon>DownloadDataUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmergencyContactUserControl.xaml.cs">
+      <DependentUpon>EmergencyContactUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\PrehistoryUserControl.xaml.cs">
+      <DependentUpon>PrehistoryUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ProfileUserControl.xaml.cs">
       <DependentUpon>ProfileUserControl.xaml</DependentUpon>
     </Compile>
@@ -226,6 +238,22 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="SplitPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\ChangePasswordUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\DownloadDataUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\EmergencyContactUserControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\PrehistoryUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
