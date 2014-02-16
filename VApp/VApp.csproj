@@ -125,6 +125,9 @@
     <Compile Include="UserControls\AccountActivity.xaml.cs">
       <DependentUpon>AccountActivity.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\AddDocumentUserControl.xaml.cs">
+      <DependentUpon>AddDocumentUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\Calendar.xaml.cs">
       <DependentUpon>Calendar.xaml</DependentUpon>
     </Compile>
@@ -145,6 +148,9 @@
     </Compile>
     <Compile Include="UserControls\EmergencyContactUserControl.xaml.cs">
       <DependentUpon>EmergencyContactUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\FindFormUserControl.xaml.cs">
+      <DependentUpon>FindFormUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\GoalsUserControl.xaml.cs">
       <DependentUpon>GoalsUserControl.xaml</DependentUpon>
@@ -209,6 +215,7 @@
   <ItemGroup>
     <Content Include="Assets\account1.png" />
     <Content Include="Assets\account2.png" />
+    <Content Include="Assets\add_document.png" />
     <Content Include="Assets\alcohol.png" />
     <Content Include="Assets\appointment.png" />
     <Content Include="Assets\calendar.png" />
@@ -267,6 +274,7 @@
     <Content Include="Assets\pane_rxrefill_mid.jpg" />
     <Content Include="Assets\pane_vamedications_mid.jpg" />
     <Content Include="Assets\pane_vitals_mid.jpg" />
+    <Content Include="Assets\search.png" />
     <Content Include="Assets\SmallLogo.png" />
     <Content Include="Assets\SplashScreen.png" />
     <Content Include="Assets\SplashScreen.scale-100.png" />
@@ -304,6 +312,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\AddDocumentUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\Calendar.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -331,6 +343,10 @@
     <Page Include="UserControls\EmergencyContactUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\FindFormUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\GoalsUserControl.xaml">
       <SubType>Designer</SubType>
