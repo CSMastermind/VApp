@@ -373,7 +373,7 @@ namespace VApp.Data
                     "",
                     "Assets/vitals4.png",
                     "Nine ways to monitor your health statistics online",
-                    null,
+                    typeof(ReadingsUserControl),
                     group4));
             group4.Items.Add(new SampleDataItem("Group-4-Item-2",
                     "Labs + Tests",

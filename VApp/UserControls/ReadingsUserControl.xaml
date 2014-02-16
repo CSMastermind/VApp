@@ -1,0 +1,206 @@
+﻿<UserControl
+    x:Class="VApp.UserControls.ReadingsUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VApp.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="500"
+    d:DesignWidth="600"
+    FontSize="16">
+    
+    <UserControl.Resources>
+        <Style x:Key="ReadingGrid" TargetType="StackPanel">
+            <Setter Property="Margin" Value="15,5" />
+        </Style>
+        <Style x:Key="HeadingBackground" TargetType="StackPanel">
+            <Setter Property="Background" Value="{StaticResource ApplicationSecondaryForegroundThemeBrush}" />
+            <Setter Property="Margin" Value="0,0,0,5" />
+        </Style>
+        <Style x:Key="ReadingHeader" TargetType="TextBlock">
+            <Setter Property="Margin" Value="1,2" />
+        </Style>
+        <Style x:Key="RowButtons" TargetType="StackPanel">
+            <Setter Property="Orientation" Value="Horizontal" />
+            <Setter Property="HorizontalAlignment" Value="Right" />
+            <Setter Property="Margin" Value="0,5,0,0" />
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <StackPanel Grid.Column="0">
+            <!-- Blood Presure -->
+            <StackPanel Style="{StaticResource ReadingGrid}">
+                <StackPanel Style="{StaticResource HeadingBackground}">
+                    <TextBlock Style="{StaticResource ReadingHeader}" Text="Blood Pressure" />
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="117/86 mmHg" Grid.Column="0" />
+                    <TextBlock Text="Sun 01/26/14" Grid.Column="1" />
+                </Grid>
+                <StackPanel Style="{StaticResource RowButtons}">
+                    <Button Content="Add New" />
+                    <Button Content="View More" />
+                </StackPanel>
+            </StackPanel>
+            <!-- Heart Rate -->
+            <StackPanel Style="{StaticResource ReadingGrid}">
+                <StackPanel Style="{StaticResource HeadingBackground}">
+                    <TextBlock Style="{StaticResource ReadingHeader}" Text="Heart Rate" />
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="86 bpm" Grid.Column="0" />
+                    <TextBlock Text="Wed 01/22/14" Grid.Column="1" />
+                </Grid>
+                <StackPanel Style="{StaticResource RowButtons}">
+                    <Button Content="Add New" />
+                    <Button Content="View More" />
+                </StackPanel>
+            </StackPanel>
+            <!-- Body Weight -->
+            <StackPanel Style="{StaticResource ReadingGrid}">
+                <StackPanel Style="{StaticResource HeadingBackground}">
+                    <TextBlock Style="{StaticResource ReadingHeader}" Text="Body Weight" />
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="216 lb" Grid.Column="0" />
+                    <TextBlock Text="Tue 09/03/13" Grid.Column="1" />
+                </Grid>
+                <StackPanel Style="{StaticResource RowButtons}">
+                    <Button Content="Add New" />
+                    <Button Content="View More" />
+                </StackPanel>
+            </StackPanel>
+            <!-- Body Temperature -->
+            <StackPanel Style="{StaticResource ReadingGrid}">
+                <StackPanel Style="{StaticResource HeadingBackground}">
+                    <TextBlock Style="{StaticResource ReadingHeader}" Text="Body Temperature" />
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="98.5° F" Grid.Column="0" />
+                    <TextBlock Text="Sun 01/26/14" Grid.Column="1" />
+                </Grid>
+                <StackPanel Style="{StaticResource RowButtons}">
+                    <Button Content="Add New" />
+                    <Button Content="View More" />
+                </StackPanel>
+            </StackPanel>
+            <!-- Pain -->
+            <StackPanel Style="{StaticResource ReadingGrid}">
+                <StackPanel Style="{StaticResource HeadingBackground}">
+                    <TextBlock Style="{StaticResource ReadingHeader}" Text="Pain" />
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="3/10" Grid.Column="0" />
+                    <TextBlock Text="Sun 10/27/13" Grid.Column="1" />
+                </Grid>
+                <StackPanel Style="{StaticResource RowButtons}">
+                    <Button Content="Add New" />
+                    <Button Content="View More" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+        <StackPanel Grid.Column="1">
+            <!-- Blood Sugar -->
+            <StackPanel Style="{StaticResource ReadingGrid}">
+                <StackPanel Style="{StaticResource HeadingBackground}">
+                    <TextBlock Style="{StaticResource ReadingHeader}" Text="Blood Sugar" />
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="121 mg/dL" Grid.Column="0" />
+                    <TextBlock Text="Sun 01/26/14" Grid.Column="1" />
+                </Grid>
+                <StackPanel Style="{StaticResource RowButtons}">
+                    <Button Content="Add New" />
+                    <Button Content="View More" />
+                </StackPanel>
+            </StackPanel>
+            <!-- Cholesterole -->
+            <StackPanel Style="{StaticResource ReadingGrid}">
+                <StackPanel Style="{StaticResource HeadingBackground}">
+                    <TextBlock Style="{StaticResource ReadingHeader}" Text="Cholestorole" />
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="189 mg/dL" Grid.Column="0" />
+                    <TextBlock Text="Fri 01/17/14" Grid.Column="1" />
+                </Grid>
+                <StackPanel Style="{StaticResource RowButtons}">
+                    <Button Content="Add New" />
+                    <Button Content="View More" />
+                </StackPanel>
+            </StackPanel>
+            <!-- Pulse Oximetry -->
+            <StackPanel Style="{StaticResource ReadingGrid}">
+                <StackPanel Style="{StaticResource HeadingBackground}">
+                    <TextBlock Style="{StaticResource ReadingHeader}" Text="Pulse Oximetry" />
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="97% SpO2" Grid.Column="0" />
+                    <TextBlock Text="Thu 10/03/13" Grid.Column="1" />
+                </Grid>
+                <StackPanel Style="{StaticResource RowButtons}">
+                    <Button Content="Add New" />
+                    <Button Content="View More" />
+                </StackPanel>
+            </StackPanel>
+            <!-- International Normalized Ratio -->
+            <StackPanel Style="{StaticResource ReadingGrid}">
+                <StackPanel Style="{StaticResource HeadingBackground}">
+                    <TextBlock Style="{StaticResource ReadingHeader}" Text="International Normalized Ratio" />
+                </StackPanel>
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Text="1.2" Grid.Column="0" />
+                    <TextBlock Text="Thu 10/03/13" Grid.Column="1" />
+                </Grid>
+                <StackPanel Style="{StaticResource RowButtons}">
+                    <Button Content="Add New" />
+                    <Button Content="View More" />
+                </StackPanel>
+            </StackPanel>
+        </StackPanel>
+
+    </Grid>
+</UserControl>

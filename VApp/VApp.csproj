@@ -152,6 +152,9 @@
     <Compile Include="UserControls\ProfileUserControl.xaml.cs">
       <DependentUpon>ProfileUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\ReadingsUserControl.xaml.cs">
+      <DependentUpon>ReadingsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\RefillmypreUserControl.xaml.cs">
       <DependentUpon>RefillmypreUserControl.xaml</DependentUpon>
     </Compile>
@@ -299,6 +302,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\ProfileUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\ReadingsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
