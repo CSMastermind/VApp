@@ -432,6 +432,13 @@ namespace VApp.Data
                     typeof(Library),
                     group5));
             this.AllGroups.Add(group5);
+
+            var group6 = new SampleDataGroup("Group-6",
+                    "Records and Forms",
+                    "",
+                    "Assets/documents.png",
+                    "Download and save important military records");
+            this.AllGroups.Add(group6);
         }
     }
 }
