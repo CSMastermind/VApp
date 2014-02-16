@@ -268,7 +268,7 @@ namespace VApp.Data
                     "",
                     "Assets/emergency2.png",
                     "Keep your emergency contacts in one place",
-                    null,
+                    typeof(EmergencyContactUserControl),
                     group1));
             group1.Items.Add(new SampleDataItem("Group-1-Item-5",
                     "My Account",
