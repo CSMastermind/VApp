@@ -338,7 +338,7 @@ namespace VApp.Data
                     "",
                     "Assets/prescription.png",
                     "Do you need to refill your prescriptions? Do it online",
-                    null,
+                    typeof(RefillmypreUserControl),
                     group3));
             group3.Items.Add(new SampleDataItem("Group-3-Item-2",
                     "Prescription Refill History",
