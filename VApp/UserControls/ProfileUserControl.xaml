@@ -53,6 +53,13 @@
         <CheckBox Content="Other" IsChecked="{Binding IsOther, Mode=TwoWay}" />
 
 
+        <TextBlock Text="Donor Information" Style="{StaticResource Heading1}" />
+
+        <TextBlock Text="Blood Type" Style="{StaticResource Label}" />
+        <ComboBox x:Name="BloodTypeBox" ItemsSource="{Binding BloodTypes}" SelectedItem="{Binding BloodType, Mode=TwoWay}" />
+        <CheckBox Content="Organ Donor" IsChecked="{Binding IsOrganDonor, Mode=TwoWay}" Margin="0,5,0,0" />
+
+
         <TextBlock Text="Primary Address" Style="{StaticResource Heading1}" />
 
         <TextBlock Text="Address Line 1" Style="{StaticResource Label}" />
@@ -65,7 +72,7 @@
         <TextBox x:Name="CityBox" Text="{Binding City, Mode=TwoWay}" />
 
         <TextBlock Text="State" Style="{StaticResource Label}" />
-        <ComboBox x:Name="StateBox" ItemsSource="{Binding States}" SelectedItem="{Binding State}" />
+        <ComboBox x:Name="StateBox" ItemsSource="{Binding States}" SelectedItem="{Binding State, Mode=TwoWay}" />
 
         <TextBlock Text="Zip Code" Style="{StaticResource Label}" />
         <TextBox x:Name="ZipCodeBox" Text="{Binding ZipCode, Mode=TwoWay}" />
@@ -74,7 +81,7 @@
         <TextBox x:Name="ProvinceBox" Text="{Binding Province, Mode=TwoWay}" />
 
         <TextBlock Text="Country" Style="{StaticResource Label}" />
-        <ComboBox x:Name="CountryBox" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country}" />
+        <ComboBox x:Name="CountryBox" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country, Mode=TwoWay}" />
 
         <TextBlock Text="Contact Information" Style="{StaticResource Heading1}" />
 

@@ -72,6 +72,12 @@ namespace VApp.ViewModels
 
         private bool isOther;
 
+        private string bloodType;
+
+        private List<string> bloodTypes;
+
+        private bool isOrganDonor;
+
         private bool privacyAccepted;
 
         private bool termsAccepted;
@@ -495,6 +501,47 @@ namespace VApp.ViewModels
                 {
                     this.isOther = value;
                     this.NotifyPropertyChanged("IsOther");
+                }
+            }
+        }
+
+        public string BloodType
+        {
+            get { return this.bloodType; }
+
+            set
+            {
+                if (value != null && !value.Equals(this.bloodType))
+                {
+                    this.bloodType = value;
+                    this.NotifyPropertyChanged("BloodType");
+                }
+            }
+        }
+
+        public List<string> BloodTypes
+        {
+            get
+            {
+                if (this.bloodTypes == null)
+                {
+                    this.bloodTypes = new List<string>() { "A+", "A-", "AB+", "AB-", "B+", "B-", "O+", "O-" };
+                }
+
+                return this.bloodTypes;
+            }
+        }
+
+        public bool IsOrganDonor
+        {
+            get { return this.isOrganDonor; }
+
+            set
+            {
+                if (!value.Equals(this.isOrganDonor))
+                {
+                    this.isOrganDonor = value;
+                    this.NotifyPropertyChanged("IsOrganDonor");
                 }
             }
         }

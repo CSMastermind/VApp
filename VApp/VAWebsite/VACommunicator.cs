@@ -52,6 +52,8 @@ namespace VApp.VAWebsite
         private const string isVAEmployeeName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsEmployee}";
         private const string isHealthProviderName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsHealthCareProvider}";
         private const string isOtherName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsOther}";
+        private const string bloodTypeName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileBloodType}";
+        private const string isOrganDonorName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsOrganDonor}";
 
         private static HttpClient client = new HttpClient();
 
@@ -126,6 +128,8 @@ namespace VApp.VAWebsite
             profile.IsVAEmployee = document.GetElementbyId("vaEmployee").Attributes.Contains("checked");
             profile.IsHealthProvider = document.GetElementbyId("healthCareProvider").Attributes.Contains("checked");
             profile.IsOther = document.GetElementbyId("isOther").Attributes.Contains("checked");
+            profile.BloodType = document.GetElementbyId("bloodType").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
+            profile.IsOrganDonor = document.GetElementbyId("organDonor").Attributes.Contains("checked");
         }
 
         public static async void SaveProfile(ProfileViewModel profile)
@@ -162,12 +166,42 @@ namespace VApp.VAWebsite
             postParamters.Add(new KeyValuePair<string, string>(answer2Name, profile.Answer2));
             postParamters.Add(new KeyValuePair<string, string>(privacyName, profile.PrivacyAccepted.ToString().ToLower()));
             postParamters.Add(new KeyValuePair<string, string>(termsName, profile.TermsAccepted.ToString().ToLower()));
-            postParamters.Add(new KeyValuePair<string, string>(isVAPatientName, profile.IsVAPatient.ToString().ToLower()));
-            postParamters.Add(new KeyValuePair<string, string>(isVeteranAdvocateName, profile.IsVeteranAdvocate.ToString().ToLower()));
-            postParamters.Add(new KeyValuePair<string, string>(isVeteranName, profile.IsVeteran.ToString().ToLower()));
-            postParamters.Add(new KeyValuePair<string, string>(isVAEmployeeName, profile.IsVAEmployee.ToString().ToLower()));
-            postParamters.Add(new KeyValuePair<string, string>(isHealthProviderName, profile.IsHealthProvider.ToString().ToLower()));
-            postParamters.Add(new KeyValuePair<string, string>(isOtherName, profile.IsOther.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(bloodTypeName, profile.BloodType));
+
+            if (profile.IsVAPatient)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isVAPatientName, "on"));
+            }
+
+            if (profile.IsVeteranAdvocate)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isVeteranAdvocateName, "on"));
+            }
+
+            if (profile.IsVeteran)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isVeteranName, "on"));
+            }
+
+            if (profile.IsVAEmployee)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isVAEmployeeName, "on"));
+            }
+
+            if (profile.IsHealthProvider)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isHealthProviderName, "on"));
+            }
+
+            if (profile.IsOther)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isOtherName, "on"));
+            }
+
+            if (profile.IsOrganDonor)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isOrganDonorName, "on"));
+            }
 
             HttpContent content = new FormUrlEncodedContent(postParamters);
 
