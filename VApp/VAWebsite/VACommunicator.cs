@@ -19,6 +19,10 @@ namespace VApp.VAWebsite
         private const string firstNameName = "manageUserProfile_profiles{actionForm.userProfileFirstName}";
         private const string middleNameName = "manageUserProfile_profiles{actionForm.userProfileMiddleName}";
         private const string lastNameName = "manageUserProfile_profiles{actionForm.userProfileLastName}";
+        private const string genderName = "manageUserProfile_profiles{actionForm.userProfileGender}";
+        private const string birthMonthName = "manageUserProfile_profiles{actionForm.userProfileBirthDateMonth}";
+        private const string birthDateName = "manageUserProfile_profiles{actionForm.userProfileBirthDateDay}";
+        private const string birthYearName = "manageUserProfile_profiles{actionForm.userProfileBirthDateYear}";
         private const string aliasName = "manageUserProfile_profiles{actionForm.userProfileUserAlias}";
         private const string maritalStatusName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileMaritalStatus}";
         private const string occupationName = "manageUserProfile_profiles{actionForm.userProfileCurrentOccupation}";
@@ -90,6 +94,10 @@ namespace VApp.VAWebsite
             profile.MiddleName = document.GetElementbyId("middleName").GetAttributeValue("value", string.Empty);
             profile.LastName = document.GetElementbyId("lastName").GetAttributeValue("value", string.Empty);
             profile.Alias = document.GetElementbyId("userAlias").GetAttributeValue("value", string.Empty);
+            profile.Gender = document.GetElementbyId("gender").GetAttributeValue("value", string.Empty);
+            profile.BirthMonth = document.GetElementbyId("monthSelect").GetAttributeValue("value", string.Empty);
+            profile.BirthDate = document.GetElementbyId("daySelect").GetAttributeValue("value", string.Empty);
+            profile.BirthYear = document.GetElementbyId("yearSelect").GetAttributeValue("value", string.Empty);
             profile.Occupation = document.GetElementbyId("currentOccupation").GetAttributeValue("value", string.Empty);
             profile.MaritalStatus = document.GetElementbyId("maritalStatus").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
             profile.ContactMethod = document.GetElementbyId("contactMethod").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
@@ -128,6 +136,10 @@ namespace VApp.VAWebsite
             postParamters.Add(new KeyValuePair<string, string>(middleNameName, profile.MiddleName));
             postParamters.Add(new KeyValuePair<string, string>(lastNameName, profile.LastName));
             postParamters.Add(new KeyValuePair<string, string>(aliasName, profile.Alias));
+            postParamters.Add(new KeyValuePair<string, string>(genderName, profile.Gender));
+            postParamters.Add(new KeyValuePair<string, string>(birthMonthName, profile.BirthMonth));
+            postParamters.Add(new KeyValuePair<string, string>(birthDateName, profile.BirthDate));
+            postParamters.Add(new KeyValuePair<string, string>(birthYearName, profile.BirthYear));
             postParamters.Add(new KeyValuePair<string, string>(maritalStatusName, profile.MaritalStatus));
             postParamters.Add(new KeyValuePair<string, string>(occupationName, profile.Occupation));
             postParamters.Add(new KeyValuePair<string, string>(contactMethodName, profile.ContactMethod));

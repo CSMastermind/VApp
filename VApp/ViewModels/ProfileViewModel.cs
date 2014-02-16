@@ -535,6 +535,14 @@ namespace VApp.ViewModels
 
         public string Answer2 { get; set; }
 
+        public string Gender { get; set; }
+
+        public string BirthMonth { get; set; }
+
+        public string BirthDate { get; set; }
+
+        public string BirthYear { get; set; }
+
         public ICommand SaveCommand
         {
             get
