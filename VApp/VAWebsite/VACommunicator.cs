@@ -19,6 +19,10 @@ namespace VApp.VAWebsite
         private const string firstNameName = "manageUserProfile_profiles{actionForm.userProfileFirstName}";
         private const string middleNameName = "manageUserProfile_profiles{actionForm.userProfileMiddleName}";
         private const string lastNameName = "manageUserProfile_profiles{actionForm.userProfileLastName}";
+        private const string genderName = "manageUserProfile_profiles{actionForm.userProfileGender}";
+        private const string birthMonthName = "manageUserProfile_profiles{actionForm.userProfileBirthDateMonth}";
+        private const string birthDateName = "manageUserProfile_profiles{actionForm.userProfileBirthDateDay}";
+        private const string birthYearName = "manageUserProfile_profiles{actionForm.userProfileBirthDateYear}";
         private const string aliasName = "manageUserProfile_profiles{actionForm.userProfileUserAlias}";
         private const string maritalStatusName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileMaritalStatus}";
         private const string occupationName = "manageUserProfile_profiles{actionForm.userProfileCurrentOccupation}";
@@ -40,6 +44,16 @@ namespace VApp.VAWebsite
         private const string question2Name = "manageUserProfile_profileswlw-select_key:{actionForm.userProfilePasswordHintQuestion2}";
         private const string answer1Name = "manageUserProfile_profiles{actionForm.userProfilePasswordHintAnswer1}";
         private const string answer2Name = "manageUserProfile_profiles{actionForm.userProfilePasswordHintAnswer2}";
+        private const string privacyName = "manageUserProfile_profiles{actionForm.userProfileAcceptPrivacy}";
+        private const string termsName = "manageUserProfile_profiles{actionForm.userProfileAcceptTerms}";
+        private const string isVAPatientName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsPatient}";
+        private const string isVeteranName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsVeteran}";
+        private const string isVeteranAdvocateName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsPatientAdvocate}";
+        private const string isVAEmployeeName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsEmployee}";
+        private const string isHealthProviderName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsHealthCareProvider}";
+        private const string isOtherName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsOther}";
+        private const string bloodTypeName = "manageUserProfile_profileswlw-select_key:{actionForm.userProfileBloodType}";
+        private const string isOrganDonorName = "manageUserProfile_profileswlw-checkbox_key:{actionForm.userProfileIsOrganDonor}";
 
         private static HttpClient client = new HttpClient();
 
@@ -82,6 +96,10 @@ namespace VApp.VAWebsite
             profile.MiddleName = document.GetElementbyId("middleName").GetAttributeValue("value", string.Empty);
             profile.LastName = document.GetElementbyId("lastName").GetAttributeValue("value", string.Empty);
             profile.Alias = document.GetElementbyId("userAlias").GetAttributeValue("value", string.Empty);
+            profile.Gender = document.GetElementbyId("gender").GetAttributeValue("value", string.Empty);
+            profile.BirthMonth = document.GetElementbyId("monthSelect").GetAttributeValue("value", string.Empty);
+            profile.BirthDate = document.GetElementbyId("daySelect").GetAttributeValue("value", string.Empty);
+            profile.BirthYear = document.GetElementbyId("yearSelect").GetAttributeValue("value", string.Empty);
             profile.Occupation = document.GetElementbyId("currentOccupation").GetAttributeValue("value", string.Empty);
             profile.MaritalStatus = document.GetElementbyId("maritalStatus").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
             profile.ContactMethod = document.GetElementbyId("contactMethod").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
@@ -102,16 +120,30 @@ namespace VApp.VAWebsite
             profile.Question2 = document.GetElementbyId("hintQuestion2").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
             profile.Answer1 = document.GetElementbyId("hintAnswer1").GetAttributeValue("value", string.Empty);
             profile.Answer2 = document.GetElementbyId("hintAnswer2").GetAttributeValue("value", string.Empty);
+            profile.PrivacyAccepted = document.DocumentNode.Descendants().Single(d => string.Equals(d.GetAttributeValue("name", string.Empty), privacyName, StringComparison.CurrentCultureIgnoreCase)).GetAttributeValue("value", false);
+            profile.TermsAccepted = document.DocumentNode.Descendants().Single(d => string.Equals(d.GetAttributeValue("name", string.Empty), termsName, StringComparison.CurrentCultureIgnoreCase)).GetAttributeValue("value", false);
+            profile.IsVAPatient = document.GetElementbyId("vaPatient").GetAttributeValue("value", true);
+            profile.IsVeteranAdvocate = document.GetElementbyId("patientAdvocate").Attributes.Contains("checked");
+            profile.IsVeteran = document.GetElementbyId("veteran").Attributes.Contains("checked");
+            profile.IsVAEmployee = document.GetElementbyId("vaEmployee").Attributes.Contains("checked");
+            profile.IsHealthProvider = document.GetElementbyId("healthCareProvider").Attributes.Contains("checked");
+            profile.IsOther = document.GetElementbyId("isOther").Attributes.Contains("checked");
+            profile.BloodType = document.GetElementbyId("bloodType").ChildNodes.Single(c => c.Attributes.Contains("selected")).NextSibling.InnerText;
+            profile.IsOrganDonor = document.GetElementbyId("organDonor").Attributes.Contains("checked");
         }
 
         public static async void SaveProfile(ProfileViewModel profile)
         {
             List<KeyValuePair<string, string>> postParamters = new List<KeyValuePair<string, string>>();
-            postParamters.Add(new KeyValuePair<string, string>(loginTokenName, profile.Token));
+            postParamters.Add(new KeyValuePair<string, string>(profileTokenName, profile.Token));
             postParamters.Add(new KeyValuePair<string, string>(firstNameName, profile.FirstName));
             postParamters.Add(new KeyValuePair<string, string>(middleNameName, profile.MiddleName));
             postParamters.Add(new KeyValuePair<string, string>(lastNameName, profile.LastName));
             postParamters.Add(new KeyValuePair<string, string>(aliasName, profile.Alias));
+            postParamters.Add(new KeyValuePair<string, string>(genderName, profile.Gender));
+            postParamters.Add(new KeyValuePair<string, string>(birthMonthName, profile.BirthMonth));
+            postParamters.Add(new KeyValuePair<string, string>(birthDateName, profile.BirthDate));
+            postParamters.Add(new KeyValuePair<string, string>(birthYearName, profile.BirthYear));
             postParamters.Add(new KeyValuePair<string, string>(maritalStatusName, profile.MaritalStatus));
             postParamters.Add(new KeyValuePair<string, string>(occupationName, profile.Occupation));
             postParamters.Add(new KeyValuePair<string, string>(contactMethodName, profile.ContactMethod));
@@ -132,6 +164,44 @@ namespace VApp.VAWebsite
             postParamters.Add(new KeyValuePair<string, string>(question2Name, profile.Question2));
             postParamters.Add(new KeyValuePair<string, string>(answer1Name, profile.Answer1));
             postParamters.Add(new KeyValuePair<string, string>(answer2Name, profile.Answer2));
+            postParamters.Add(new KeyValuePair<string, string>(privacyName, profile.PrivacyAccepted.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(termsName, profile.TermsAccepted.ToString().ToLower()));
+            postParamters.Add(new KeyValuePair<string, string>(bloodTypeName, profile.BloodType));
+
+            if (profile.IsVAPatient)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isVAPatientName, "on"));
+            }
+
+            if (profile.IsVeteranAdvocate)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isVeteranAdvocateName, "on"));
+            }
+
+            if (profile.IsVeteran)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isVeteranName, "on"));
+            }
+
+            if (profile.IsVAEmployee)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isVAEmployeeName, "on"));
+            }
+
+            if (profile.IsHealthProvider)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isHealthProviderName, "on"));
+            }
+
+            if (profile.IsOther)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isOtherName, "on"));
+            }
+
+            if (profile.IsOrganDonor)
+            {
+                postParamters.Add(new KeyValuePair<string, string>(isOrganDonorName, "on"));
+            }
 
             HttpContent content = new FormUrlEncodedContent(postParamters);
 

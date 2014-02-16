@@ -60,6 +60,28 @@ namespace VApp.ViewModels
 
         private ObservableCollection<string> contactMethods;
 
+        private bool isVAPatient;
+
+        private bool isVeteran;
+
+        private bool isVeteranAdvocate;
+
+        private bool isVAEmployee;
+
+        private bool isHealthProvider;
+
+        private bool isOther;
+
+        private string bloodType;
+
+        private List<string> bloodTypes;
+
+        private bool isOrganDonor;
+
+        private bool privacyAccepted;
+
+        private bool termsAccepted;
+
         private DelegateCommand saveCommand;
 
         public ProfileViewModel()
@@ -399,6 +421,159 @@ namespace VApp.ViewModels
             }
         }
 
+        public bool IsVAPatient
+        {
+            get { return this.isVAPatient; }
+
+            set
+            {
+                if (!value.Equals(this.isVAPatient))
+                {
+                    this.isVAPatient = value;
+                    this.NotifyPropertyChanged("IsVAPatient");
+                }
+            }
+        }
+
+        public bool IsVeteran
+        {
+            get { return this.isVeteran; }
+
+            set
+            {
+                if (!value.Equals(this.isVeteran))
+                {
+                    this.isVeteran = value;
+                    this.NotifyPropertyChanged("IsVeteran");
+                }
+            }
+        }
+
+        public bool IsVeteranAdvocate
+        {
+            get { return this.isVeteranAdvocate; }
+
+            set
+            {
+                if (!value.Equals(this.isVeteranAdvocate))
+                {
+                    this.isVeteranAdvocate = value;
+                    this.NotifyPropertyChanged("IsVeteranAdvocate");
+                }
+            }
+        }
+
+        public bool IsVAEmployee
+        {
+            get { return this.isVAEmployee; }
+
+            set
+            {
+                if (!value.Equals(this.isVAEmployee))
+                {
+                    this.isVAEmployee = value;
+                    this.NotifyPropertyChanged("IsVAEmployee");
+                }
+            }
+        }
+
+        public bool IsHealthProvider
+        {
+            get { return this.isHealthProvider; }
+
+            set
+            {
+                if (!value.Equals(this.isHealthProvider))
+                {
+                    this.isHealthProvider = value;
+                    this.NotifyPropertyChanged("IsHealthProvider");
+                }
+            }
+        }
+
+        public bool IsOther
+        {
+            get { return this.isOther; }
+
+            set
+            {
+                if (!value.Equals(this.isOther))
+                {
+                    this.isOther = value;
+                    this.NotifyPropertyChanged("IsOther");
+                }
+            }
+        }
+
+        public string BloodType
+        {
+            get { return this.bloodType; }
+
+            set
+            {
+                if (value != null && !value.Equals(this.bloodType))
+                {
+                    this.bloodType = value;
+                    this.NotifyPropertyChanged("BloodType");
+                }
+            }
+        }
+
+        public List<string> BloodTypes
+        {
+            get
+            {
+                if (this.bloodTypes == null)
+                {
+                    this.bloodTypes = new List<string>() { "A+", "A-", "AB+", "AB-", "B+", "B-", "O+", "O-" };
+                }
+
+                return this.bloodTypes;
+            }
+        }
+
+        public bool IsOrganDonor
+        {
+            get { return this.isOrganDonor; }
+
+            set
+            {
+                if (!value.Equals(this.isOrganDonor))
+                {
+                    this.isOrganDonor = value;
+                    this.NotifyPropertyChanged("IsOrganDonor");
+                }
+            }
+        }
+
+        public bool PrivacyAccepted
+        {
+            get { return this.privacyAccepted; }
+
+            set
+            {
+                if (!value.Equals(this.privacyAccepted))
+                {
+                    this.privacyAccepted = value;
+                    this.NotifyPropertyChanged("PrivacyAccepted");
+                }
+            }
+        }
+
+        public bool TermsAccepted
+        {
+            get { return this.termsAccepted; }
+
+            set
+            {
+                if (!value.Equals(this.termsAccepted))
+                {
+                    this.termsAccepted = value;
+                    this.NotifyPropertyChanged("TermsAccepted");
+                }
+            }
+        }
+
         public string Question1 { get; set; }
 
         public string Question2 { get; set; }
@@ -406,6 +581,14 @@ namespace VApp.ViewModels
         public string Answer1 { get; set; }
 
         public string Answer2 { get; set; }
+
+        public string Gender { get; set; }
+
+        public string BirthMonth { get; set; }
+
+        public string BirthDate { get; set; }
+
+        public string BirthYear { get; set; }
 
         public ICommand SaveCommand
         {
