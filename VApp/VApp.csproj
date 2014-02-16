@@ -158,6 +158,9 @@
     <Compile Include="UserControls\RefillmypreUserControl.xaml.cs">
       <DependentUpon>RefillmypreUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\TestsUserControl.xaml.cs">
+      <DependentUpon>TestsUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\TreatmentFacilitiesUserControl.xaml.cs">
       <DependentUpon>TreatmentFacilitiesUserControl.xaml</DependentUpon>
     </Compile>
@@ -310,6 +313,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\RefillmypreUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\TestsUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -380,7 +380,7 @@ namespace VApp.Data
                     "",
                     "Assets/lab3.png",
                     "Keep track of your lab results and tests here",
-                    null,
+                    typeof(TestsUserControl),
                     group4));
             group4.Items.Add(new SampleDataItem("Group-4-Item-3",
                     "Journals",
