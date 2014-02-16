@@ -1,0 +1,25 @@
+﻿<UserControl
+    x:Class="VApp.UserControls.AccountActivity"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VApp.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignWidth="579" Height="588.5">
+
+    <Grid Margin="0,0,10,2433">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="101*"/>
+            <ColumnDefinition Width="411*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0*"/>
+            <RowDefinition Height="0*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <ListBox x:Name="Activity" HorizontalAlignment="Left" Height="584" Margin="10,1,0,-585" VerticalAlignment="Top" Width="555" Grid.Row="2" Grid.ColumnSpan="3" Foreground="White" Background="Transparent" />
+
+    </Grid>
+</UserControl>

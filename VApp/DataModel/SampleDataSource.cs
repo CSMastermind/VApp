@@ -275,7 +275,7 @@ namespace VApp.Data
                     "",
                     "Assets/account1.png",
                     "Manage your account, authentication",
-                    null,
+                    typeof(AccountActivity),
                     group1));
             this.AllGroups.Add(group1);
 
