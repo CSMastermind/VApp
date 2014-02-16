@@ -125,6 +125,9 @@
     <Compile Include="UserControls\ProfileUserControl.xaml.cs">
       <DependentUpon>ProfileUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\RefillmypreUserControl.xaml.cs">
+      <DependentUpon>RefillmypreUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VAWebsite\VACommunicator.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
@@ -223,6 +226,10 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\ProfileUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\RefillmypreUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
