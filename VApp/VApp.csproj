@@ -122,6 +122,9 @@
     <Compile Include="Common\LayoutAwarePage.cs" />
     <Compile Include="Common\RichTextColumns.cs" />
     <Compile Include="Common\SuspensionManager.cs" />
+    <Compile Include="UserControls\CareGiverUserControl.xaml.cs">
+      <DependentUpon>CareGiverUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\ChangePasswordUserControl.xaml.cs">
       <DependentUpon>ChangePasswordUserControl.xaml</DependentUpon>
     </Compile>
@@ -246,6 +249,10 @@
     <Page Include="SplitPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CareGiverUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\ChangePasswordUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>

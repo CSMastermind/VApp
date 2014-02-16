@@ -289,7 +289,7 @@ namespace VApp.Data
                     "",
                     "Assets/get_care.png",
                     "Keep track of health care providers in one place",
-                    null,
+                    typeof(CareGiverUserControl),
                     group2));
             group2.Items.Add(new SampleDataItem("Group-2-Item-2",
                     "Treatment Facilities",
