@@ -387,13 +387,13 @@ namespace VApp.Data
                     "",
                     "Assets/journal2.png",
                     "Record your daily activity and food intake",
-                    null,
+                    typeof(JournalUserControl),
                     group4));
             group4.Items.Add(new SampleDataItem("Group-4-Item-4",
                     "My Goals",
                     "",
                     "Assets/goal.png",
-                    "Record and track your personal Goals",
+                    "Record and track your personal goals",
                     null,
                     group4));
             this.AllGroups.Add(group4);

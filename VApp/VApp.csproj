@@ -137,6 +137,9 @@
     <Compile Include="UserControls\EmergencyContactUserControl.xaml.cs">
       <DependentUpon>EmergencyContactUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\JournalUserControl.xaml.cs">
+      <DependentUpon>JournalUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MedicationSummaryUserControl.xaml.cs">
       <DependentUpon>MedicationSummaryUserControl.xaml</DependentUpon>
     </Compile>
@@ -287,6 +290,10 @@
     <Page Include="UserControls\EmergencyContactUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\JournalUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\MedicationSummaryUserControl.xaml">
       <SubType>Designer</SubType>
