@@ -305,6 +305,27 @@ namespace VApp.Data
                     "Keep your insurance information in one place",
                     null,
                     group2));
+            group2.Items.Add(new SampleDataItem("Group-2-Item-4",
+                    "Health Calendar",
+                    "",
+                    "Assets/coverage.png",
+                    "Schedule meetings, appointments, and to-dos.",
+                    null,
+                    group2));
+            group2.Items.Add(new SampleDataItem("Group-2-Item-5",
+                    "VA Appointments",
+                    "",
+                    "Assets/coverage.png",
+                    "View your VA Appointmnts.",
+                    null,
+                    group2));
+            group2.Items.Add(new SampleDataItem("Group-2-Item-6",
+                    "Wellness Reminders",
+                    "",
+                    "Assets/coverage.png",
+                    "Check when its time for a test or exam",
+                    null,
+                    group2));
             this.AllGroups.Add(group2);
 
             var group3 = new SampleDataGroup("Group-3",
