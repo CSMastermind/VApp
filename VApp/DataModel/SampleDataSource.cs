@@ -303,7 +303,7 @@ namespace VApp.Data
                     "",
                     "Assets/coverage.png",
                     "Keep your insurance information in one place",
-                    null,
+                    typeof(MyCoverageControl),
                     group2));
             group2.Items.Add(new SampleDataItem("Group-2-Item-4",
                     "Health Calendar",
@@ -317,7 +317,7 @@ namespace VApp.Data
                     "",
                     "Assets/appointment.png",
                     "View your VA Appointmnts.",
-                    null,
+                    typeof(VAAppointmentSummaryUserControl),
                     group2));
             group2.Items.Add(new SampleDataItem("Group-2-Item-6",
                     "Wellness Reminders",
