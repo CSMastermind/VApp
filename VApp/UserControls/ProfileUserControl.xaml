@@ -21,74 +21,101 @@
         </Style>
     </UserControl.Resources>
     
-    <StackPanel>
-        <TextBlock Text="Identification" Style="{StaticResource Heading1}" />
+    <Grid>
+        <ProgressRing Width="50" Height="50" IsActive="{Binding IsLoading}" Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibility}}" VerticalAlignment="Top" Margin="10" />
+        <ProgressRing Width="50" Height="50" IsActive="{Binding IsLoading}" Visibility="{Binding IsLoading, Converter={StaticResource BoolToVisibility}}" VerticalAlignment="Bottom" Margin="10" />
+        <StackPanel>
+            <TextBlock Text="Identification" Style="{StaticResource Heading1}" />
 
-        <TextBlock Text="First Name" Style="{StaticResource Label}" />
-        <TextBox x:Name="FirstNameBox" Text="{Binding FirstName, Mode=TwoWay}" />
+            <TextBlock Text="First Name" Style="{StaticResource Label}" />
+            <TextBox x:Name="FirstNameBox" Text="{Binding FirstName, Mode=TwoWay}" />
 
-        <TextBlock Text="Middle Name" Style="{StaticResource Label}" />
-        <TextBox x:Name="MiddleNameBox" Text="{Binding MiddleName, Mode=TwoWay}"  />
+            <TextBlock Text="Middle Name" Style="{StaticResource Label}" />
+            <TextBox x:Name="MiddleNameBox" Text="{Binding MiddleName, Mode=TwoWay}"  />
 
-        <TextBlock Text="Last Name" Style="{StaticResource Label}" />
-        <TextBox x:Name="LastNameBox" Text="{Binding LastName, Mode=TwoWay}"  />
+            <TextBlock Text="Last Name" Style="{StaticResource Label}" />
+            <TextBox x:Name="LastNameBox" Text="{Binding LastName, Mode=TwoWay}"  />
 
-        <TextBlock Text="Alias" Style="{StaticResource Label}" />
-        <TextBox x:Name="AliasBox" Text="{Binding Alias, Mode=TwoWay}" />
+            <TextBlock Text="Alias" Style="{StaticResource Label}" />
+            <TextBox x:Name="AliasBox" Text="{Binding Alias, Mode=TwoWay}" />
 
-        <TextBlock Text="Occupation" Style="{StaticResource Label}" />
-        <TextBox x:Name="OccupationBox" Text="{Binding Occupation, Mode=TwoWay}" />
+            <TextBlock Text="Occupation" Style="{StaticResource Label}" />
+            <TextBox x:Name="OccupationBox" Text="{Binding Occupation, Mode=TwoWay}" />
 
-        <TextBlock Text="Marital Status" Style="{StaticResource Label}" />
-        <ComboBox x:Name="MaritalStatusBox" ItemsSource="{Binding MaritalStatuses}" SelectedItem="{Binding MaritalStatus, Mode=TwoWay}" />
+            <TextBlock Text="Marital Status" Style="{StaticResource Label}" />
+            <ComboBox x:Name="MaritalStatusBox" ItemsSource="{Binding MaritalStatuses}" SelectedItem="{Binding MaritalStatus, Mode=TwoWay}" />
+
         
+            <TextBlock Text="Tell Us About Yourself" Style="{StaticResource Heading1}" />
+
+            <CheckBox Content="VA Patient" IsChecked="{Binding IsVAPatient, Mode=TwoWay}" />
+            <CheckBox Content="Veteran" IsChecked="{Binding IsVeteran, Mode=TwoWay}" />
+            <CheckBox Content="Veteran Advocate/Family Member/Friend" IsChecked="{Binding IsVeteranAdvocate, Mode=TwoWay}" />
+            <CheckBox Content="VA Employee" IsChecked="{Binding IsVAEmployee, Mode=TwoWay}" />
+            <CheckBox Content="Health Care Provider" IsChecked="{Binding IsHealthProvider, Mode=TwoWay}" />
+            <CheckBox Content="Other" IsChecked="{Binding IsOther, Mode=TwoWay}" />
+
+
+            <TextBlock Text="Donor Information" Style="{StaticResource Heading1}" />
+
+            <TextBlock Text="Blood Type" Style="{StaticResource Label}" />
+            <ComboBox x:Name="BloodTypeBox" ItemsSource="{Binding BloodTypes}" SelectedItem="{Binding BloodType, Mode=TwoWay}" />
+            <CheckBox Content="Organ Donor" IsChecked="{Binding IsOrganDonor, Mode=TwoWay}" Margin="0,5,0,0" />
+
+
+            <TextBlock Text="Primary Address" Style="{StaticResource Heading1}" />
+
+            <TextBlock Text="Address Line 1" Style="{StaticResource Label}" />
+            <TextBox x:Name="Address1Box" Text="{Binding AddressLine1, Mode=TwoWay}" />
+
+            <TextBlock Text="Address Line 2" Style="{StaticResource Label}" />
+            <TextBox x:Name="Address2Box" Text="{Binding AddressLine2, Mode=TwoWay}" />
+
+            <TextBlock Text="City" Style="{StaticResource Label}" />
+            <TextBox x:Name="CityBox" Text="{Binding City, Mode=TwoWay}" />
+
+            <TextBlock Text="State" Style="{StaticResource Label}" />
+            <ComboBox x:Name="StateBox" ItemsSource="{Binding States}" SelectedItem="{Binding State, Mode=TwoWay}" />
+
+            <TextBlock Text="Zip Code" Style="{StaticResource Label}" />
+            <TextBox x:Name="ZipCodeBox" Text="{Binding ZipCode, Mode=TwoWay}" />
+
+            <TextBlock Text="Province" Style="{StaticResource Label}" />
+            <TextBox x:Name="ProvinceBox" Text="{Binding Province, Mode=TwoWay}" />
+
+            <TextBlock Text="Country" Style="{StaticResource Label}" />
+            <ComboBox x:Name="CountryBox" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country, Mode=TwoWay}" />
+
+            <TextBlock Text="Contact Information" Style="{StaticResource Heading1}" />
+
+            <TextBlock Text="Contact Method" Style="{StaticResource Label}" />
+            <ComboBox x:Name="ContactMethodBox" ItemsSource="{Binding ContactMethods}" SelectedItem="{Binding ContactMethod, Mode=TwoWay}" />
+
+            <TextBlock Text="Email (E)" Style="{StaticResource Label}" />
+            <TextBox x:Name="EmailBox" Text="{Binding Email, Mode=TwoWay}" />
+
+            <TextBlock Text="Home Phone (H)" Style="{StaticResource Label}" />
+            <TextBox x:Name="HomePhoneBox" Text="{Binding HomePhone, Mode=TwoWay}" />
+
+            <TextBlock Text="Mobile Phone (M)" Style="{StaticResource Label}" />
+            <TextBox x:Name="MobilePhoneBox" Text="{Binding MobilePhone, Mode=TwoWay}" />
+
+            <TextBlock Text="Work Phone (W)" Style="{StaticResource Label}" />
+            <TextBox x:Name="WorkPhoneBox" Text="{Binding WorkPhone, Mode=TwoWay}" />
+
+            <TextBlock Text="Fax (F)" Style="{StaticResource Label}" />
+            <TextBox x:Name="FaxBox" Text="{Binding Fax, Mode=TwoWay}" />
+
+            <TextBlock Text="Pager (P)" Style="{StaticResource Label}" />
+            <TextBox x:Name="PagerBox" Text="{Binding Pager, Mode=TwoWay}" />
+
         
-        <TextBlock Text="Primary Address" Style="{StaticResource Heading1}" />
+            <TextBlock Text="Legal" Style="{StaticResource Heading1}" />
 
-        <TextBlock Text="Address Line 1" Style="{StaticResource Label}" />
-        <TextBox x:Name="Address1Box" Text="{Binding AddressLine1, Mode=TwoWay}" />
+            <CheckBox Content="I accept MyHealthEVet's Privacy Policy." IsChecked="{Binding PrivacyAccepted, Mode=TwoWay}" />
+            <CheckBox Content="I accept MyHealthEVet's Terms and Conditions." IsChecked="{Binding TermsAccepted, Mode=TwoWay}" />
 
-        <TextBlock Text="Address Line 2" Style="{StaticResource Label}" />
-        <TextBox x:Name="Address2Box" Text="{Binding AddressLine2, Mode=TwoWay}" />
-
-        <TextBlock Text="City" Style="{StaticResource Label}" />
-        <TextBox x:Name="CityBox" Text="{Binding City, Mode=TwoWay}" />
-
-        <TextBlock Text="State" Style="{StaticResource Label}" />
-        <ComboBox x:Name="StateBox" ItemsSource="{Binding States}" SelectedItem="{Binding State}" />
-
-        <TextBlock Text="Zip Code" Style="{StaticResource Label}" />
-        <TextBox x:Name="ZipCodeBox" Text="{Binding ZipCode, Mode=TwoWay}" />
-
-        <TextBlock Text="Province" Style="{StaticResource Label}" />
-        <TextBox x:Name="ProvinceBox" Text="{Binding Province, Mode=TwoWay}" />
-
-        <TextBlock Text="Country" Style="{StaticResource Label}" />
-        <ComboBox x:Name="CountryBox" ItemsSource="{Binding Countries}" SelectedItem="{Binding Country}" />
-
-        <TextBlock Text="Contact Information" Style="{StaticResource Heading1}" />
-
-        <TextBlock Text="Contact Method" Style="{StaticResource Label}" />
-        <ComboBox x:Name="ContactMethodBox" ItemsSource="{Binding ContactMethods}" SelectedItem="{Binding ContactMethod, Mode=TwoWay}" />
-
-        <TextBlock Text="Email (E)" Style="{StaticResource Label}" />
-        <TextBox x:Name="EmailBox" Text="{Binding Email, Mode=TwoWay}" />
-
-        <TextBlock Text="Home Phone (H)" Style="{StaticResource Label}" />
-        <TextBox x:Name="HomePhoneBox" Text="{Binding HomePhone, Mode=TwoWay}" />
-
-        <TextBlock Text="Mobile Phone (M)" Style="{StaticResource Label}" />
-        <TextBox x:Name="MobilePhoneBox" Text="{Binding MobilePhone, Mode=TwoWay}" />
-
-        <TextBlock Text="Work Phone (W)" Style="{StaticResource Label}" />
-        <TextBox x:Name="WorkPhoneBox" Text="{Binding WorkPhone, Mode=TwoWay}" />
-
-        <TextBlock Text="Fax (F)" Style="{StaticResource Label}" />
-        <TextBox x:Name="FaxBox" Text="{Binding Fax, Mode=TwoWay}" />
-
-        <TextBlock Text="Pager (P)" Style="{StaticResource Label}" />
-        <TextBox x:Name="PagerBox" Text="{Binding Pager, Mode=TwoWay}" />
-        
-        <Button Content="Save" HorizontalAlignment="Right" Command="{Binding SaveCommand}" />
-    </StackPanel>
+            <Button Content="Save" HorizontalAlignment="Right" Command="{Binding SaveCommand}" />
+        </StackPanel>
+    </Grid>
 </UserControl>

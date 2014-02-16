@@ -124,9 +124,20 @@
     <Compile Include="Common\SuspensionManager.cs" />
     <Compile Include="UserControls\HealthyLiving.xaml.cs">
       <DependentUpon>HealthyLiving.xaml</DependentUpon>
+    <Compile Include="UserControls\ChangePasswordUserControl.xaml.cs">
+      <DependentUpon>ChangePasswordUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DownloadDataUserControl.xaml.cs">
+      <DependentUpon>DownloadDataUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\EmergencyContactUserControl.xaml.cs">
+      <DependentUpon>EmergencyContactUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ProfileUserControl.xaml.cs">
       <DependentUpon>ProfileUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\RefillmypreUserControl.xaml.cs">
+      <DependentUpon>RefillmypreUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="VAWebsite\VACommunicator.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
@@ -143,12 +154,15 @@
   <ItemGroup>
     <Content Include="Assets\account1.png" />
     <Content Include="Assets\account2.png" />
+    <Content Include="Assets\appointment.png" />
+    <Content Include="Assets\calendar.png" />
     <Content Include="Assets\care_giver1.png" />
     <Content Include="Assets\coverage.png" />
     <Content Include="Assets\DarkGray.png" />
     <Content Include="Assets\download4.png" />
     <Content Include="Assets\emergency1.png" />
     <Content Include="Assets\emergency2.png" />
+    <Content Include="Assets\flag.jpg" />
     <Content Include="Assets\get_care.png" />
     <Content Include="Assets\goal.png" />
     <Content Include="Assets\history.png" />
@@ -164,6 +178,7 @@
     <Content Include="Assets\personal_info.png" />
     <Content Include="Assets\pharmacy2.png" />
     <Content Include="Assets\prescription.png" />
+    <Content Include="Assets\reminder.png" />
     <Content Include="Assets\research_health.png" />
     <Content Include="Assets\Logo.scale-100.png" />
     <Content Include="Assets\Logo.scale-140.png" />
@@ -226,10 +241,23 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Include="UserControls\HealthyLiving.xaml">
+    <Page Include="UserControls\ChangePasswordUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\DownloadDataUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\EmergencyContactUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\ProfileUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\RefillmypreUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
