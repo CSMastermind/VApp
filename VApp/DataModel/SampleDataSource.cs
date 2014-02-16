@@ -352,7 +352,7 @@ namespace VApp.Data
                     "",
                     "Assets/medication.png",
                     "Track medicines, herbals & supplements you take",
-                    null,
+                    typeof(MedicationUserControl1),
                     group3));
             group3.Items.Add(new SampleDataItem("Group-3-Item-4",
                     "My VA Medication List",
