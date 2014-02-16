@@ -1,0 +1,44 @@
+﻿<UserControl
+    x:Class="VApp.UserControls.DownloadDataUserControl"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VApp.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="400"
+    d:DesignWidth="400"
+    FontSize="15">
+    
+    <UserControl.Resources>
+        <Style x:Key="Heading1" TargetType="TextBlock">
+            <Setter Property="FontSize" Value="26" />
+            <Setter Property="Margin" Value="0,20,0,0" />
+        </Style>
+    </UserControl.Resources>
+    
+    <StackPanel>
+        <TextBlock Text="VA Blue Button" Style="{StaticResource Heading1}" />
+        <TextBlock TextWrapping="Wrap">
+The VA Blue Button is simple, safe, and reliable. You can view, print or download all of the personal health information currently available in your My HealtheVet account. Having this information to share with people you trust may help you better manage your overall health.  View a list of the current VA Blue Button Features.
+You can get your VA Blue Button information in three file formats: <LineBreak />
+     • Adobe PDF file format that is easy to read and print (.pdf file) <LineBreak />
+     • Simple text format (.txt file) <LineBreak />
+     • Custom Blue Button text format (.bluebutton file)
+        </TextBlock>
+
+        <TextBlock Text="VA Continuity of Care Document (VA CCD)" Style="{StaticResource Heading1}" />
+        <TextBlock TextWrapping="Wrap">
+If you have an upgraded My HealtheVet Premium account you may also download your VA Continuity of Care Document (VA CCD).  This is a standard health summary that was designed to be shared with non-VA providers and systems. Learn more about the VA CCD.
+<LineBreak />
+You can get your VA CCD information in two file formats:<LineBreak />
+     • XML file format that requires a special computer application to read (.xml file). This format may not be viewable in your browser <LineBreak />
+     • Adobe PDF file format that is easy to read and print (.pdf file)<LineBreak />
+        </TextBlock>
+
+        <RadioButton Content="Download my customized Blue Button data" GroupName="DownloadOption" />
+        <RadioButton Content="Download my VA Continuity of Care Document (VA CCD) data" GroupName="DownloadOption" />
+        <Button Content="Download" HorizontalAlignment="Center" Margin="10" />
+
+    </StackPanel>
+</UserControl>
