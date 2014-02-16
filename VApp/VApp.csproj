@@ -216,6 +216,7 @@
     <Content Include="Assets\coverage.png" />
     <Content Include="Assets\DarkGray.png" />
     <Content Include="Assets\depression.png" />
+    <Content Include="Assets\documents.png" />
     <Content Include="Assets\download4.png" />
     <Content Include="Assets\drugs.png" />
     <Content Include="Assets\emergency1.png" />
