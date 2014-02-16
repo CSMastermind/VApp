@@ -125,11 +125,20 @@
     <Compile Include="UserControls\AccountActivity.xaml.cs">
       <DependentUpon>AccountActivity.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Calendar.xaml.cs">
+      <DependentUpon>Calendar.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\CalendarItem.xaml.cs">
+      <DependentUpon>CalendarItem.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\CareGiverUserControl.xaml.cs">
       <DependentUpon>CareGiverUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\ChangePasswordUserControl.xaml.cs">
       <DependentUpon>ChangePasswordUserControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\DiseaseCenter.xaml.cs">
+      <DependentUpon>DiseaseCenter.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\DownloadDataUserControl.xaml.cs">
       <DependentUpon>DownloadDataUserControl.xaml</DependentUpon>
@@ -143,11 +152,20 @@
     <Compile Include="UserControls\JournalUserControl.xaml.cs">
       <DependentUpon>JournalUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\HealthCenter.xaml.cs">
+      <DependentUpon>HealthCenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Library.xaml.cs">
+      <DependentUpon>Library.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControls\MedicationSummaryUserControl.xaml.cs">
       <DependentUpon>MedicationSummaryUserControl.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MedicationUserControl1.xaml.cs">
       <DependentUpon>MedicationUserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControls\Mental Health.xaml.cs">
+      <DependentUpon>Mental Health.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControls\MyCoverageControl.xaml.cs">
       <DependentUpon>MyCoverageControl.xaml</DependentUpon>
@@ -173,6 +191,9 @@
     <Compile Include="UserControls\VAAppointmentSummaryUserControl.xaml.cs">
       <DependentUpon>VAAppointmentSummaryUserControl.xaml</DependentUpon>
     </Compile>
+    <Compile Include="UserControls\Wellness Reminders.xaml.cs">
+      <DependentUpon>Wellness Reminders.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VAWebsite\VACommunicator.cs" />
     <Compile Include="ViewModels\LoginPageViewModel.cs" />
     <Compile Include="ViewModels\ProfileViewModel.cs" />
@@ -188,12 +209,15 @@
   <ItemGroup>
     <Content Include="Assets\account1.png" />
     <Content Include="Assets\account2.png" />
+    <Content Include="Assets\alcohol.png" />
     <Content Include="Assets\appointment.png" />
     <Content Include="Assets\calendar.png" />
     <Content Include="Assets\care_giver1.png" />
     <Content Include="Assets\coverage.png" />
     <Content Include="Assets\DarkGray.png" />
+    <Content Include="Assets\depression.png" />
     <Content Include="Assets\download4.png" />
+    <Content Include="Assets\drugs.png" />
     <Content Include="Assets\emergency1.png" />
     <Content Include="Assets\emergency2.png" />
     <Content Include="Assets\flag.jpg" />
@@ -212,6 +236,7 @@
     <Content Include="Assets\personal_info.png" />
     <Content Include="Assets\pharmacy2.png" />
     <Content Include="Assets\prescription.png" />
+    <Content Include="Assets\ptsd.png" />
     <Content Include="Assets\reminder.png" />
     <Content Include="Assets\research_health.png" />
     <Content Include="Assets\Logo.scale-100.png" />
@@ -278,6 +303,14 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\Calendar.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\CalendarItem.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="UserControls\CareGiverUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -285,6 +318,10 @@
     <Page Include="UserControls\ChangePasswordUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="UserControls\DiseaseCenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\DownloadDataUserControl.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -302,11 +339,23 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="UserControls\HealthCenter.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Library.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="UserControls\MedicationSummaryUserControl.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\MedicationUserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Mental Health.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -339,6 +388,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="UserControls\VAAppointmentSummaryUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControls\Wellness Reminders.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

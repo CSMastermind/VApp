@@ -1,0 +1,111 @@
+﻿<UserControl
+    x:Class="VApp.UserControls.DiseaseCenter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VApp.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="850"
+    d:DesignWidth="650">
+
+    <Grid>
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="830.01" Width="646" RenderTransformOrigin="0.5,0.5" Margin="0,0.095,0,0" UseLayoutRounding="False" d:LayoutRounding="Auto">
+            <TextBlock.RenderTransform>
+                <CompositeTransform SkewY="0.194" TranslateY="0.997"/>
+            </TextBlock.RenderTransform>
+        	<Run Text="Veterans Health Initiative is a comprehensive program to recognize the connection between certain health effects and military service, to allow military medical history to be better documented, and to prepare health care providers to better serve their veteran patients."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Agent Orange"/>
+        	<LineBreak/>
+        	<Run Text="This course provides information to participants concerning long- term health consequences of exposure to Agent Orange and other herbicides used in Vietnam."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Chemical, Biological and Radiological Weapons"/>
+        	<LineBreak/>
+        	<Run Text="This Veteran Health Initiative provides essential information for health care providers about the Chemical, Biological, and Radiological weapons threat in the U.S. and abroad."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Cold Injury"/>
+        	<LineBreak/>
+        	<Run Text="This program provides information on the effects of cold injuries and the circumstances of their occurrence in the veteran population."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Former Prisoners of War"/>
+        	<LineBreak/>
+        	<Run Text="This program provides information on the kinds of treatment POWs experienced in the German, Pacific, Korean and Vietnam theaters of conflict."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Gulf War"/>
+        	<LineBreak/>
+        	<Run Text="This program provides information on the most common symptoms and diagnoses of Gulf War veterans, and the current programs established by the Department of Defense and the VA on behalf of Gulf War participants."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Hearing Impairment"/>
+        	<LineBreak/>
+        	<Run Text="This program provides information on hearing loss in veteran patients, including appropriate referrals, evaluations, guidance, and treatment for these patients."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Infectious Diseases of Southwest Asia"/>
+        	<LineBreak/>
+        	<Run Text="This course identifies endemic infectious diseases of Southwest Asia, Afghanistan, and Iraq, and describes long-term concerns, historical background, clinical findings, diagnosis, treatment, and prevention for these infections."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Military Sexual Trauma"/>
+        	<LineBreak/>
+        	<Run Text="Every day, VA clinicians care for women and men who suffer from physical and mental aftereffects of sexual harassment and sexual assault which occurred during military service."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Post Traumatic Stress Disorder"/>
+        	<LineBreak/>
+        	<Run Text="Many veterans with PTSD remain unrecognized and thus may not be receiving the treatment and support they need for this military related condition. Primary care staff can play a key role in identifying these patients and getting them the help they need."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Radiation"/>
+        	<LineBreak/>
+        	<Run Text="This program provides information on the different types of radiation and the major types of exposure to radiation that veterans have experienced and special VA programs available."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Spinal Cord Injury"/>
+        	<LineBreak/>
+        	<Run Text="This program provides information on the most common conditions affecting persons with SCI - the changes in physiology, compensatory mechanisms, common disorders, physical functions, and general health care needs of individuals with SCI."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Traumatic Amputation"/>
+        	<LineBreak/>
+        	<Run Text="This program provides information on recognizing common problems associated with traumatic amputations during military service, rehabilitation, primary and long-term care, prosthetic, clinical and administrative issues."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Traumatic Brain Injury"/>
+        	<LineBreak/>
+        	<Run Text="This independent study presents an overview of Traumatic Brain Injury (TBI) issues that Primary Care practitioners may encounter when providing care to veterans and active duty military personnel."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="Visual Impairment"/>
+        	<LineBreak/>
+        	<Run Text="This program provides information on the causes of sight loss, the functional implications of vision loss, and the role of the Visual Impairment Services Team (VIST) in the treatment of legally blind veterans and the referral process."/>
+        	<LineBreak/>
+        	<Run/>
+        	<LineBreak/>
+        	<Run Text="War Wounded - Operations Enduring Freedom and Iraqi Freedom"/>
+        	<LineBreak/>
+        	<Run Text="This program provides information on environmental and endemic hazards of deployment to Southwest Asia, DoD Pre-Deployment screening and the Force Health Protection Plan, and VA healthcare benefits after combat deployment."/>
+        </TextBlock>
+
+    </Grid>
+</UserControl>

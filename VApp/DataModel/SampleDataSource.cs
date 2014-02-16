@@ -310,7 +310,7 @@ namespace VApp.Data
                     "",
                     "Assets/calendar.png",
                     "Schedule meetings, appointments, and to-dos.",
-                    null,
+                    typeof(Calendar),
                     group2));
             group2.Items.Add(new SampleDataItem("Group-2-Item-5",
                     "VA Appointments",
@@ -324,7 +324,7 @@ namespace VApp.Data
                     "",
                     "Assets/reminder.png",
                     "Check when its time for a test or exam",
-                    null,
+                    typeof(Wellness_Reminders),
                     group2));
             this.AllGroups.Add(group2);
 
@@ -408,28 +408,28 @@ namespace VApp.Data
                     "",
                     "Assets/emergency1.png",
                     "Healthy living means taking certain steps to help avoid illness",
-                    null,
+                    typeof(HealthCenter),
                     group5));
             group5.Items.Add(new SampleDataItem("Group-5-Item-2",
                     "Diseases + Condition Centers",
                     "",
                     "Assets/information1.png",
                     "Find information for common illnesses and conditions",
-                    null,
+                    typeof(DiseaseCenter),
                     group5));
             group5.Items.Add(new SampleDataItem("Group-5-Item-3",
                     "Mental Health",
                     "",
                     "Assets/mental.png",
                     "From holiday blues to the stresses of being a soldier",
-                    null,
+                    typeof(Mental_Health),
                     group5));
             group5.Items.Add(new SampleDataItem("Group-5-Item-4",
                     "Medical Library",
                     "",
                     "Assets/library.png",
                     "My HealtheVet provides two extensive online medical libraries",
-                    null,
+                    typeof(Library),
                     group5));
             this.AllGroups.Add(group5);
         }

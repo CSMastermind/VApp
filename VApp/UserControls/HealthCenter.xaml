@@ -1,0 +1,87 @@
+﻿<UserControl
+    x:Class="VApp.UserControls.HealthCenter"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:VApp.UserControls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    d:DesignHeight="997"
+    d:DesignWidth="692">
+
+    <Grid RenderTransformOrigin="0.511,0.54">
+        <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" Height="917" Width="671">
+    		<Run Text="Eat Wisely"/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="The best way to manage your weight is to balance what you eat and drink with how active you are. Did you know there are simple actions you can take to eat wisely? "/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Physical Activity"/>
+    		<LineBreak/>
+    		<Run Text="The best way to manage your weight is to keep a balance between what you eat and drink and how active you are. You can be active your way by choosing activities that are best for you and your lifestyle. Start at a level that is comfortable for you. Increase your activity gradually and safely."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Smoking + Tobacco Use Cessation "/>
+    		<LineBreak/>
+    		<Run Text="Veterans who receive their health care through VA are much more likely to smoke and use tobacco than the rest of the U.S. population. They also are heavier smokers and have higher rates of smoking-related illnesses. Many veterans have told us that they first began smoking in the military. In fact, during World War II and the Korean War, cigarettes were often provided free as part of K- rations. Many in the military thought then that smoking was a good way to help keep soldiers alert and awake in the battlefield and the command, &quot;smoke 'em if you got 'em&quot; is one that many older veterans remember. Recruits may have even been able to earn smoking breaks during military training and boot camp. Unfortunately, this early tobacco use led quickly to a lifetime addiction and a wide list of health-related problems."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Separation from Active Duty"/>
+    		<LineBreak/>
+    		<Run Text="Welcome to the MyHealtheVet Separation from Active Duty Center developed to support veterans from Operation Enduring Freedom and Operation Iraqi Freedom. As you move from active duty to civilian life, we want to make sure we provide information and services to promote optimal health. The health information on this site encourages healthy living through developing healthier behaviors that last and are achievable."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Caregiver Assistance"/>
+    		<LineBreak/>
+    		<Run Text="Welcome to the Caregiver Assistance Center. You are there to support your Veteran; we are here to help you. VA wants to help you stay strong and stay informed with strategies for maintaining balance, caring for yourself, and speaking up for you and the Veteran. This site is designed to help you take better care of yourself. You will also find valuable information on VA benefits and services along with community resources to help you provide care."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Healthy Sleep"/>
+    		<LineBreak/>
+    		<Run Text="The best way to get the right amount of sleep is to follow some simple guidelines every day. There are simple ways to help you get a good night's sleep while avoiding medications that have side effects. The following is advice on how to get started and maintain healthy sleep that is safe and beneficial to your health."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Emergency Preparedness"/>
+    		<LineBreak/>
+    		<Run Text="The My HealtheVet Emergency Preparedness Center was developed to help you learn how to protect yourself and your family against all types of hazards. The content is focused on how to develop, practice, and maintain emergency plans that reflect what must be done before, during, and after a disaster to protect people and their property. This center includes information on how to assemble a Disaster Supply kit that contains food, water, and other supplies in sufficient quantity for individuals and their families to survive following a disaster in the event they must rely on their own resources."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Medications: Play It Safe"/>
+    		<LineBreak/>
+    		<Run Text="Too often, you go to the Doctors and are put on one more pill. Ever stop and wonder, &quot;What are all these pills for?&quot; &quot;What happens if you stop a pill or maybe add one extra?&quot; In fact, getting answers to these questions could save your life."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Here you will learn how to get the most out of your medications while keeping safe. Problems with medications can happen when you and your providers do not talk with each other. We are going to help you communicate and ask questions of your healthcare team. You may even learn more about your medications, your health problems, and how to live a healthier lifestyle. We also have tools to help you keep track of your medications as well as other healthcare information. Here is what you can do to &quot;Play it safe!&quot; with your medications."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Spirituality"/>
+    		<LineBreak/>
+    		<Run Text="&quot;Spirituality&quot; is often defined as a sense of connection that gives meaning and purpose to a person's life. Any kind of illness or stressful event can affect how you see the world and others in it. In these situations, you might begin to question your long–held personal beliefs and values. You also might have concerns about your relationships with others. The Department of Veterans Affairs (VA) is concerned about you as a whole person. VA is committed to offering spiritual care as part of your treatment, if it is something you want. This Spirituality Center might help you decide if you want spiritual care from a VA chaplain. It may also assist you in thinking about your current beliefs, values and relationships. We also hope it will encourage you, inspire you and renew your spirit."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="Spinal Cord Injury"/>
+    		<LineBreak/>
+    		<Run Text="This Center can help Veterans with a spinal cord injury or disorder (SCI/D) and their families. When someone has an SCI/D, they often wonder what life will be like. Will they be able to hold a job, make and keep friends, have a family, or do other things that make life meaningful? Things that seemed easy before the injury may now seem hard."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run Text="When you have these questions, talk to your spinal cord injury team and to other people who live with spinal cord injuries. You will find that most people with a spinal cord injury are able to do things to make life good, but they might need to find new ways to do some things. The links below can help you avoid problems so that you can think about living a healthy and fulfilling life. This site encourages healthy living through developing healthier behaviors that are easy to start and easy to keep doing."/>
+    		<LineBreak/>
+    		<Run/>
+    		<LineBreak/>
+    		<Run/>
+        </TextBlock>
+    </Grid>
+</UserControl>
